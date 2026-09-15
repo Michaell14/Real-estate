@@ -1,0 +1,11 @@
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Local verification output
+.screenshots/
