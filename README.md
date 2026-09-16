@@ -22,9 +22,6 @@ The original URL slugs are preserved so old links keep working:
 | Calendar | `/calendar/` | Calendar — WUREC |
 | Executive Board | `/exec-board/` | Executive Board — WUREC |
 | Resources | `/resources/` | Resources — WUREC |
-| Blog | `/blog/` | Blog — WUREC |
-| Blog posts | `/blog/<slug>/` | e.g. Is it Time for Developers to Unlock Middle Housing? — WUREC |
-| Media | `/media/` | Media — WUREC |
 
 ## Editing the site
 
@@ -78,9 +75,6 @@ the placeholders below with the club's own material:
   member's `<img src>` at them (see the comment at the top of the page).
 - **Calendar** (`src/pages/calendar.html`) — paste the Google Calendar public
   embed URL into `data-calendar-src`.
-- **Blog** (`src/pages/blog/`) — post bodies are placeholders; titles marked in
-  the blog index for the golf, global-debt and blockchain posts are descriptive
-  stand-ins for the originals.
 - **Sign-up links** — currently point to the Wharton club sign-up page
   (`groups.wharton.upenn.edu/WUREC/club_signup`). Swap for the club's current
   membership form if it lives elsewhere.
