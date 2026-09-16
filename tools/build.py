@@ -9,7 +9,7 @@ Reads ``src/layout.html`` (shared header/footer) and every page in
 the original wurec.info URL slugs, e.g.
 
     src/pages/membership.html        -> membership/index.html
-    src/pages/blog/middle-housing.html -> blog/middle-housing/index.html
+    src/pages/events/nyc.html        -> events/nyc/index.html   (nested folders work too)
 
 Each page starts with a small front-matter block::
 
@@ -47,8 +47,6 @@ NAV = [
     ]),
     ("Executive Board", "exec-board"),
     ("Resources", "resources"),
-    ("Blog", "blog"),
-    ("Media", "media"),
 ]
 
 FRONT_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
