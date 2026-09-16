@@ -7,13 +7,15 @@
   --navy: #011f5b;
   --navy-dark: #01143d;
   --red: #990000;
+  --sky: #2b8fd6;
+  --slate: #3a3f4b;
   --ink: #2b2b2b;
   --muted: #6b6b6b;
   --line: #e5e5e5;
   --bg-alt: #f5f6f8;
   --white: #ffffff;
-  --font-head: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-head: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --header-h: 84px;
   --max: 1200px;
 }
@@ -247,6 +249,15 @@ body.home main { padding-top: 0; }
 .page-banner h1 { color: #fff; margin: 0; }
 .page-banner .subtitle { margin: 1rem auto 0; max-width: 640px; color: rgba(255, 255, 255, .85); font-weight: 300; }
 
+/* Mission (home) --------------------------------------------------------- */
+.section-title--sky { color: var(--sky); letter-spacing: .06em; font-weight: 700; font-size: 1.75rem; margin-bottom: 2rem; }
+.section-title.section-title--sky::after { display: none; }
+.mission__inner { max-width: 1100px; }
+.mission p { font-size: 1.15rem; line-height: 1.7; color: var(--slate); margin-bottom: 1.6em; }
+.mission strong { font-weight: 700; color: #333846; }
+.mission__rule { text-align: center; }
+.mission .actions { margin-top: 2.2rem; }
+
 /* Sections --------------------------------------------------------------- */
 .section { padding: 88px 0; }
 .section--tight { padding: 56px 0; }
@@ -413,6 +424,7 @@ body.home main { padding-top: 0; }
   .hero { min-height: 86vh; }
 }
 @media (max-width: 600px) {
+  .mission p { font-size: 1.02rem; }
   .grid--2, .grid--3, .grid--4, .members { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 1.7rem; }
