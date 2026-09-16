@@ -1,110 +1,262 @@
 ---
 title: Executive Board
 slug: exec-board
-description: Meet the WUREC Executive Board — the students who run the Wharton Undergraduate Real Estate Club.
+description: Meet the 2026–2027 WUREC Executive Board — the students who run the Wharton Undergraduate Real Estate Club.
 ---
 <!--
-  Board roster. To update a member: edit the name, role, bio and (optionally)
-  add an email line such as
-      <a class="email" href="mailto:name@wharton.upenn.edu">name@wharton.upenn.edu</a>
-  Replace the headshot by dropping a square photo into assets/img/board/ and
-  pointing the <img src> at it. Members whose full name or title could not be
-  recovered from the original site are listed by first name / "Executive Board".
+  2026/2027 board roster, grouped by committee (two members per group).
+
+  To update a member, edit the name, the "meta" line (school and class year)
+  and the two places the email appears: the mailto: href and the
+  .member__email overlay text (shown when the photo is hovered / focused).
+
+  Headshots: every photo is currently the placeholder assets/img/headshot.svg.
+  To add a real one, drop a square photo into assets/img/board/ named after the
+  member (e.g. assets/img/board/josh-kwon.jpg) and point that member's
+  <img src> at it, e.g. src="{{root}}assets/img/board/josh-kwon.jpg".
+
+  Phone numbers are intentionally not published.
 -->
 <div class="page-banner">
   <div class="wrap">
     <h1>Executive Board</h1>
-    <p class="subtitle">Questions can be directed to relevant board members via their contact info below.</p>
+    <p class="subtitle">The 2026&ndash;2027 WUREC board. Hover over or tap a photo to email a board member.</p>
   </div>
 </div>
 
 <section class="section">
   <div class="wrap">
-    <div class="members">
+    <div class="board">
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Griffin Albaugh</h3>
-        <p class="role">Co-President</p>
-        <p>Griffin is studying Real Estate and Finance at the Wharton School and serves as Co-President of WUREC, having previously served as Head of Treks and Head of Investments. Griffin is also the Wharton Chair for the Class of 2027 and President of the Penn Men's Rugby Club.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Co-Presidents</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:joshkwon@wharton.upenn.edu" aria-label="Email Josh Kwon">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">joshkwon@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Josh Kwon</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Joseph Holahan</h3>
-        <p class="role">Co-President</p>
-        <p>Joseph serves as Co-President of WUREC. He previously served as Co-Head of the Careers Committee and is a contributor to the WUREC blog.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:galbaugh@wharton.upenn.edu" aria-label="Email Griffin Albaugh">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">galbaugh@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Griffin Albaugh</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
       </div>
+    </section>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Marissa Yee</h3>
-        <p class="role">Treasurer</p>
-        <p>Marissa serves as Treasurer of WUREC.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Treks</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:evierose@wharton.upenn.edu" aria-label="Email Evie Rosenfeld">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">evierose@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Evie Rosenfeld</h3>
+          <p class="meta">Wharton &rsquo;29</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Marilyn Shi</h3>
-        <p class="role">Treks Committee</p>
-        <p>Marilyn is a senior from Queens, New York, concentrating in Real Estate and Legal Studies at Wharton, with a minor in Art History. Alongside WUREC, she serves as Director of Investments at the Penn Students Federal Credit Union and looks forward to studying abroad in Milan, Italy, at Università Bocconi. Marilyn will be joining BDT &amp; MSD Partners' Real Estate Private Equity team this summer. She has previously interned at Oaktree Capital Management, Sculptor Capital Management, Artemis Real Estate Partners, and Balyasny Asset Management. In her free time, you can find her beekeeping, embarking on outdoor adventures, reading memoirs, and baking.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:fdlt@wharton.upenn.edu" aria-label="Email Frank de la Terga">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">fdlt@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Frank de la Terga</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
       </div>
+    </section>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Spencer Buten</h3>
-        <p class="role">Speakers Committee</p>
-        <p>Spencer serves on the Speakers Committee, which hosts WUREC's speaker series and panels with industry leaders.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Careers</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:freeman0@wharton.upenn.edu" aria-label="Email Jayden Freeman">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">freeman0@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Jayden Freeman</h3>
+          <p class="meta">Wharton &rsquo;29</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Reed</h3>
-        <p class="role">Communications Committee</p>
-        <p>Reed is a senior from Tennessee, concentrating in Real Estate and Finance. He has served on the Communications Committee and has been active in WUREC since his freshman year.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:jnunez21@wharton.upenn.edu" aria-label="Email Jasmine Nunez">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">jnunez21@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Jasmine Nunez</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
       </div>
+    </section>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Roman</h3>
-        <p class="role">Executive Board</p>
-        <p>Roman is a senior studying Real Estate and Finance at Wharton.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Speakers</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:sistonen@wharton.upenn.edu" aria-label="Email Samuli Sistonen">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">sistonen@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Samuli Sistonen</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Wesley</h3>
-        <p class="role">Executive Board</p>
-        <p>Wesley is a junior studying Real Estate and Finance at Wharton.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:sanchez0@wharton.upenn.edu" aria-label="Email Alejandra Sanchez">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">sanchez0@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Alejandra Sanchez</h3>
+          <p class="meta">Wharton &rsquo;29</p>
+        </div>
       </div>
+    </section>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Leo</h3>
-        <p class="role">Executive Board</p>
-        <p>Leo is a junior studying Real Estate and Finance at Wharton.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Communications</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:reedsull@wharton.upenn.edu" aria-label="Email Reed Sullivan">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">reedsull@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Reed Sullivan</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Andrei</h3>
-        <p class="role">Executive Board</p>
-        <p>Andrei is a junior in the College studying mathematical economics.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:kgul25@wharton.upenn.edu" aria-label="Email Kinga Gul">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">kgul25@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Kinga Gul</h3>
+          <p class="meta">Wharton &rsquo;29</p>
+        </div>
       </div>
+    </section>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Kinga</h3>
-        <p class="role">Executive Board</p>
-        <p>Kinga is a sophomore studying Real Estate and Finance at Wharton.</p>
-      </div>
+    <section class="board-group">
+      <h2 class="board-group__title">Internal</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:leotapia@wharton.upenn.edu" aria-label="Email Leo Tapia">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">leotapia@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Leo Tapia</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
 
-      <div class="member">
-        <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
-        <h3>Ali</h3>
-        <p class="role">Executive Board</p>
-        <p>Ali is a sophomore from Texas studying Finance and Real Estate at Wharton. Along with WUREC, Ali is involved with the Wharton Investment and Trading Group as well as the Joseph Wharton Scholars program. In his free time, Ali enjoys traveling, running marathons, and exploring Center City Philadelphia.</p>
+        <div class="member">
+          <a class="member__photo-link" href="mailto:peyton1@sas.upenn.edu" aria-label="Email Peyton Lange">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">peyton1@<br>sas.upenn.edu</span>
+          </a>
+          <h3>Peyton Lange</h3>
+          <p class="meta">College &rsquo;29</p>
+        </div>
       </div>
+    </section>
+
+    <section class="board-group">
+      <h2 class="board-group__title">Treasurers</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:melnikov@sas.upenn.edu" aria-label="Email Andrei Melnikov">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">melnikov@<br>sas.upenn.edu</span>
+          </a>
+          <h3>Andrei Melnikov</h3>
+          <p class="meta">College &rsquo;28</p>
+        </div>
+
+        <div class="member">
+          <a class="member__photo-link" href="mailto:alishakr@wharton.upenn.edu" aria-label="Email Ali Shakerin">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">alishakr@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Ali Shakerin</h3>
+          <p class="meta">Wharton &rsquo;29</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-group">
+      <h2 class="board-group__title">The Institute</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:romanv@wharton.upenn.edu" aria-label="Email Roman Vandemark">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">romanv@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Roman Vandemark</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
+
+        <div class="member">
+          <a class="member__photo-link" href="mailto:rmelsom@wharton.upenn.edu" aria-label="Email Robert Melsom">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">rmelsom@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Robert Melsom</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-group">
+      <h2 class="board-group__title">Investments</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:marishi@wharton.upenn.edu" aria-label="Email Marilyn Shi">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">marishi@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Marilyn Shi</h3>
+          <p class="meta">Wharton &rsquo;27</p>
+        </div>
+
+        <div class="member">
+          <a class="member__photo-link" href="mailto:wesleych@wharton.upenn.edu" aria-label="Email Wesley Chen">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">wesleych@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Wesley Chen</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-group">
+      <h2 class="board-group__title">Infrastructure</h2>
+      <div class="board-group__members">
+        <div class="member">
+          <a class="member__photo-link" href="mailto:marcusme@sas.upenn.edu" aria-label="Email Marcus Meshechok">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">marcusme@<br>sas.upenn.edu</span>
+          </a>
+          <h3>Marcus Meshechok</h3>
+          <p class="meta">College &rsquo;27</p>
+        </div>
+
+        <div class="member">
+          <a class="member__photo-link" href="mailto:nikanaum@wharton.upenn.edu" aria-label="Email Veronika Naumova">
+            <img class="member__photo" src="{{root}}assets/img/headshot.svg" alt="">
+            <span class="member__email" aria-hidden="true">nikanaum@<br>wharton.upenn.edu</span>
+          </a>
+          <h3>Veronika Naumova</h3>
+          <p class="meta">Wharton &rsquo;28</p>
+        </div>
+      </div>
+    </section>
 
     </div>
   </div>
@@ -113,7 +265,7 @@ description: Meet the WUREC Executive Board — the students who run the Wharton
 <section class="section section--alt section--tight">
   <div class="wrap narrow center">
     <h2>Committees</h2>
-    <p>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications</p>
+    <p>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications &middot; Infrastructure</p>
     <a class="btn btn--ghost btn--small" href="{{root}}membership/">Learn About Our Committees</a>
   </div>
 </section>

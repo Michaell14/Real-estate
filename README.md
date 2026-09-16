@@ -72,9 +72,10 @@ the placeholders below with the club's own material:
 - **Photos** — every image is an SVG placeholder in `assets/img/`. Drop in real
   photos (hero, trek/speaker/case-comp tiles, galleries) and update the
   `<img src>` paths in `src/pages/`.
-- **Executive Board** (`src/pages/exec-board.html`) — some members are listed by
-  first name or with the role "Executive Board" because the full name/title was
-  not recoverable. Add headshots, full names, titles and email links.
+- **Executive Board** (`src/pages/exec-board.html`) — the 2026–27 roster is
+  current, but every headshot is still the `assets/img/headshot.svg`
+  placeholder. Drop square photos into `assets/img/board/` and point each
+  member's `<img src>` at them (see the comment at the top of the page).
 - **Calendar** (`src/pages/calendar.html`) — paste the Google Calendar public
   embed URL into `data-calendar-src`.
 - **Blog** (`src/pages/blog/`) — post bodies are placeholders; titles marked in
