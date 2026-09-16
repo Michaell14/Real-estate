@@ -202,18 +202,19 @@ body.home main { padding-top: 0; }
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center; color: #fff;
-  background: var(--navy) url(../img/hero-skyline.svg) center bottom / cover no-repeat;
+  background: var(--navy) url(../img/background.jpeg) center center / cover no-repeat;
   overflow: hidden;
   padding: calc(var(--header-h) + 40px) 0 80px;
 }
 .hero::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(1, 20, 61, .35) 0%, rgba(1, 20, 61, .15) 45%, rgba(1, 20, 61, .55) 100%);
+  background: linear-gradient(180deg, rgba(1, 20, 61, .62) 0%, rgba(1, 20, 61, .48) 45%, rgba(1, 20, 61, .72) 100%);
 }
 .hero .wrap { position: relative; z-index: 1; max-width: 1040px; }
 .hero .eyebrow { color: rgba(255, 255, 255, .8); }
 .hero h1 {
   color: #fff;
+  text-shadow: 0 1px 6px rgba(1, 20, 61, .4);
   font-size: clamp(1.9rem, 4.6vw, 3.3rem);
   letter-spacing: .18em;
   margin-bottom: .5em;
@@ -224,7 +225,8 @@ body.home main { padding-top: 0; }
   font-weight: 300;
   max-width: 640px;
   margin: 0 auto 2.4em;
-  color: rgba(255, 255, 255, .92);
+  color: rgba(255, 255, 255, .96);
+  text-shadow: 0 1px 5px rgba(1, 20, 61, .45);
 }
 .scroll-cue {
   position: absolute; left: 50%; bottom: 28px; z-index: 1;
@@ -239,15 +241,18 @@ body.home main { padding-top: 0; }
 /* Page banner (interior pages) ------------------------------------------- */
 .page-banner {
   position: relative;
-  background: var(--navy) url(../img/hero-skyline.svg) center 70% / cover no-repeat;
+  background: var(--navy) url(../img/background.jpeg) center 30% / cover no-repeat;
   color: #fff;
   padding: 84px 0 76px;
   text-align: center;
 }
-.page-banner::after { content: ""; position: absolute; inset: 0; background: rgba(1, 20, 61, .45); }
+.page-banner::after { content: ""; position: absolute; inset: 0; background: rgba(1, 20, 61, .66); }
 .page-banner .wrap { position: relative; z-index: 1; }
-.page-banner h1 { color: #fff; margin: 0; }
-.page-banner .subtitle { margin: 1rem auto 0; max-width: 640px; color: rgba(255, 255, 255, .85); font-weight: 300; }
+.page-banner h1 { color: #fff; margin: 0; text-shadow: 0 1px 4px rgba(1, 20, 61, .45); }
+.page-banner .subtitle {
+  margin: 1rem auto 0; max-width: 640px; color: rgba(255, 255, 255, .94); font-weight: 300;
+  text-shadow: 0 1px 4px rgba(1, 20, 61, .45);
+}
 
 /* Mission (home) --------------------------------------------------------- */
 .section-title--sky { color: var(--sky); letter-spacing: .06em; font-weight: 700; font-size: 1.75rem; margin-bottom: 2rem; }
