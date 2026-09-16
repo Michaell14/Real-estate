@@ -30,6 +30,61 @@ body_class: home
   </div>
 </section>
 
+<!--
+  Photo carousel. Slides come from assets/img/carousel/, which is generated
+  from the originals in carousel/ by  python3 tools/make_carousel.py .
+  To add or reorder photos: drop them in carousel/, run that script, then keep
+  the <li> slides and thumbnail <button>s below in step (one pair per photo,
+  in the order the script prints). data-interval is the autoplay delay in ms.
+-->
+<section class="section carousel-section" aria-label="WUREC in photos">
+  <div class="wrap">
+    <div class="carousel" data-interval="5000" aria-roledescription="carousel" aria-label="WUREC in photos">
+      <div class="carousel__stage">
+        <ul class="carousel__slides" aria-live="off">
+          <li class="carousel__slide is-active" id="slide-1" role="tabpanel" aria-roledescription="slide" aria-label="1 of 8" aria-hidden="false">
+            <img src="{{root}}assets/img/carousel/01.jpg" alt="A speaker presenting to a full lecture hall of students." decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-2" role="tabpanel" aria-roledescription="slide" aria-label="2 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/02.jpg" alt="A presentation in front of two wall screens in a firm's boardroom." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-3" role="tabpanel" aria-roledescription="slide" aria-label="3 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/03.jpg" alt="A guest speaker beside a window overlooking the city skyline." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-4" role="tabpanel" aria-roledescription="slide" aria-label="4 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/04.jpg" alt="Speakers walking through a diagram on a whiteboard." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-5" role="tabpanel" aria-roledescription="slide" aria-label="5 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/05.jpg" alt="Members seated around a conference table listening to a presentation." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-6" role="tabpanel" aria-roledescription="slide" aria-label="6 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/06.jpg" alt="Members in hard hats and safety vests touring a construction site." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-7" role="tabpanel" aria-roledescription="slide" aria-label="7 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them." loading="lazy" decoding="async">
+          </li>
+          <li class="carousel__slide" id="slide-8" role="tabpanel" aria-roledescription="slide" aria-label="8 of 8" aria-hidden="true">
+            <img src="{{root}}assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline." loading="lazy" decoding="async">
+          </li>
+        </ul>
+        <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="carousel__toggle" type="button" aria-label="Pause slideshow"><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg></button>
+      </div>
+      <div class="carousel__thumbs" role="tablist" aria-label="Choose a photo">
+        <button class="carousel__thumb is-active" type="button" role="tab" aria-selected="true" aria-controls="slide-1" aria-label="Photo 1"><img src="{{root}}assets/img/carousel/01-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Photo 2" tabindex="-1"><img src="{{root}}assets/img/carousel/02-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="Photo 3" tabindex="-1"><img src="{{root}}assets/img/carousel/03-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-4" aria-label="Photo 4" tabindex="-1"><img src="{{root}}assets/img/carousel/04-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-5" aria-label="Photo 5" tabindex="-1"><img src="{{root}}assets/img/carousel/05-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-6" aria-label="Photo 6" tabindex="-1"><img src="{{root}}assets/img/carousel/06-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-7" aria-label="Photo 7" tabindex="-1"><img src="{{root}}assets/img/carousel/07-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-8" aria-label="Photo 8" tabindex="-1"><img src="{{root}}assets/img/carousel/08-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--alt">
   <div class="wrap">
     <h2 class="section-title">What We Do</h2>
