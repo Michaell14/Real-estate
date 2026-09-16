@@ -331,10 +331,6 @@ body.home main { padding-top: 0; }
 .section-title--left { text-align: left; }
 .section-title--left::after { margin-left: 0; }
 
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.split > div { padding: 2.4rem; border: 1px solid var(--line); background: #fff; }
-.split h2 { font-size: 1.2rem; }
-
 /* Cards / tiles ---------------------------------------------------------- */
 .grid { display: grid; gap: 2.2rem; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
@@ -490,7 +486,7 @@ body.home main { padding-top: 0; }
   .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .board { grid-template-columns: 1fr; gap: 3rem; }
   .board-group__members { max-width: 560px; margin: 0 auto; }
-  .split, .feature { grid-template-columns: 1fr; gap: 2rem; }
+  .feature { grid-template-columns: 1fr; gap: 2rem; }
   .feature:nth-child(even) .feature__img { order: 0; }
   .section { padding: 64px 0; }
   .hero { min-height: 86vh; }
@@ -506,5 +502,4 @@ body.home main { padding-top: 0; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 1.7rem; }
   .btn { padding: 13px 26px; }
-  .split > div { padding: 1.6rem; }
 }
