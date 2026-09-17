@@ -79,6 +79,32 @@
     track.addEventListener('scroll', function () { strip.classList.add('is-touched'); }, { passive: true, once: true });
   });
 
+  /* Committee switcher: tabs on the left choose the panel on the right (an accordion on phones).
+     Arrow keys move between tabs. */
+  Array.prototype.forEach.call(document.querySelectorAll('.switcher'), function (box) {
+    var tabs = box.querySelectorAll('.switcher__tab');
+    function select(tab, focus) {
+      Array.prototype.forEach.call(tabs, function (t) {
+        var on = t === tab;
+        t.classList.toggle('is-on', on);
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) { panel.classList.toggle('is-on', on); }
+      });
+      if (focus) { tab.focus(); }
+    }
+    Array.prototype.forEach.call(tabs, function (tab, n) {
+      tab.addEventListener('click', function () { select(tab, false); });
+      tab.addEventListener('keydown', function (e) {
+        var step = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+        if (!step) { return; }
+        e.preventDefault();
+        select(tabs[(n + step + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
     el.textContent = String(new Date().getFullYear());
   });
