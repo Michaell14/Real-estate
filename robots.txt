@@ -4,4 +4,4 @@ Disallow: /src/
 Disallow: /tools/
 Disallow: /carousel/
 
-Sitemap: https://wurec.info/sitemap.xml
+Sitemap: https://wurec.org/sitemap.xml
