@@ -1,4 +1,4 @@
-/* WUREC site behaviour: sticky header state, mobile menu, nav folders, calendar embed. */
+/* WUREC site behaviour: sticky header state, mobile menu, nav folders, photo carousel. */
 (function () {
   var header = document.querySelector('.site-header');
   var nav = document.querySelector('.site-nav');
@@ -44,27 +44,14 @@
     }
   });
 
-  /* Google Calendar embed: set data-calendar-src on the .calendar-embed element. */
-  Array.prototype.forEach.call(document.querySelectorAll('[data-calendar-src]'), function (el) {
-    var src = el.getAttribute('data-calendar-src');
-    if (!src) { return; }
-    var frame = document.createElement('iframe');
-    frame.src = src;
-    frame.title = 'WUREC events calendar';
-    frame.setAttribute('loading', 'lazy');
-    el.appendChild(frame);
-    el.classList.add('has-embed');
-  });
-
   /* Photo carousel: arrows, thumbnail tabs, keyboard, swipe and autoplay.
-     Autoplay pauses while hovered or keyboard-focused, when the tab is hidden, and via
-     the pause button; it starts paused for users who prefer reduced motion. */
+     Autoplay pauses while hovered or keyboard-focused and when the tab is hidden,
+     and stays off for users who prefer reduced motion. */
   Array.prototype.forEach.call(document.querySelectorAll('.carousel'), function (root) {
     var slides = root.querySelectorAll('.carousel__slide');
     var thumbs = root.querySelectorAll('.carousel__thumb');
     var strip = root.querySelector('.carousel__thumbs');
     var live = root.querySelector('.carousel__slides');
-    var toggle = root.querySelector('.carousel__toggle');
     var interval = parseInt(root.getAttribute('data-interval'), 10) || 5000;
     var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
     var paused = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -95,12 +82,6 @@
       if (live) { live.setAttribute('aria-live', rotating() ? 'off' : 'polite'); }
       if (rotating()) { timer = setTimeout(function () { show(index + 1); schedule(); }, interval); }
     }
-    function setPaused(state) {
-      paused = state;
-      root.classList.toggle('is-paused', paused);
-      if (toggle) { toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow'); }
-      schedule();
-    }
     function step(delta) { show(index + delta); schedule(); }
     /* A mouse click leaves focus on the button it hit; only keyboard focus should hold the slideshow. */
     function keyboardFocus(el) {
@@ -112,7 +93,6 @@
     Array.prototype.forEach.call(thumbs, function (thumb, n) {
       thumb.addEventListener('click', function () { show(n); schedule(); });
     });
-    if (toggle) { toggle.addEventListener('click', function () { setPaused(!paused); }); }
 
     root.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') { return; }
@@ -139,7 +119,7 @@
     }, { passive: true });
     document.addEventListener('visibilitychange', schedule);
 
-    setPaused(paused);
+    schedule();
   });
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {

@@ -43,10 +43,8 @@ NAV = [
         ("Treks", "treks"),
         ("Speakers", "new-page-1"),
         ("Case Comps", "new-page-2"),
-        ("Calendar", "calendar"),
     ]),
     ("Executive Board", "exec-board"),
-    ("Resources", "resources"),
 ]
 
 FRONT_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
