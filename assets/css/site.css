@@ -321,7 +321,9 @@ main { animation: none; }
 .person__role { display: block; font-weight: 400; font-size: 11px; line-height: 1.6; letter-spacing: .2em; text-transform: uppercase; color: var(--caption); }
 
 /* Committee switcher (home): tabs left, selected committee right; an accordion on phones */
-.switcher { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); column-gap: 72px; align-items: start; border-top: 1px solid var(--hairline); }
+/* Eight tab rows plus a flexible ninth row: the panel spans all nine, so any height it
+   needs beyond the tab list goes into the last row and the tab rows never stretch */
+.switcher { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); grid-template-rows: repeat(8, auto) 1fr; column-gap: 72px; align-items: start; border-top: 1px solid var(--hairline); }
 .switcher__item { display: contents; }
 .switcher__tab {
   grid-column: 1; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; align-items: center;
@@ -334,7 +336,7 @@ main { animation: none; }
 .switcher__tab.is-on .switcher__num { color: var(--caption); }
 .switcher__tab.is-on .switcher__name { transform: translateX(10px); }
 .switcher__panel { grid-column: 2; display: flex; flex-direction: column; gap: 20px; padding-top: 22px; }
-.js .switcher__panel { grid-row: 1 / span 8; }
+.js .switcher__panel { grid-row: 1 / span 9; }
 .js .switcher__panel:not(.is-on) { display: none; }
 .js .switcher__panel.is-on { animation: rise .5s var(--ease) both; }
 .switcher__media { height: 260px; overflow: hidden; background: var(--surface); }
