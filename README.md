@@ -36,6 +36,10 @@ tools/make_carousel.py  resizes carousel/ photos into assets/img/carousel/
 tools/make_photos.py    resizes the photos in assets/ into assets/img/photos/
 tools/make_brand.py     favicon, touch icon, logo and link-preview images (Pillow + fontTools)
 tools/make_headshots.py trims and squares board portraits into exec-board/pictures/
+tools/board.py          reads src/data/board.json and renders the Executive Board roster
+tools/sync_board.py     refreshes board.json and the headshots from Google Sheets / Drive
+src/data/board.json     the Executive Board roster (season, committees, members)
+.github/workflows/sync-board.yml  runs sync_board.py + build.py daily and commits the result
 ```
 
 1. Edit a page in `src/pages/` (or the nav list at the top of `tools/build.py`).
@@ -45,6 +49,63 @@ tools/make_headshots.py trims and squares board portraits into exec-board/pictur
 Inside page bodies use `{{root}}` for links and asset paths
 (e.g. `{{root}}membership/`, `{{root}}assets/img/photo.jpg`) so pages work
 at any depth and under any base path.
+
+## Updating the Executive Board
+
+The board page is generated from a Google Sheet, so board members can update
+it without touching the repository. Every morning (and whenever someone
+presses *Run workflow* on the **Sync executive board** action) a GitHub
+Action reads the sheet and the headshot folder, rewrites
+`src/data/board.json` and `exec-board/pictures/`, rebuilds the site and
+commits. Vercel deploys the commit. Nothing on the site changes until the
+sheet is valid: a missing column, a bad email or a row with no name stops
+the run, and the log lists every problem.
+
+### For board members
+
+- **Sheet:** one row per person, in the order they should appear. Columns:
+  `Committee`, `Name`, `School`, `Class of`, `Email`, `Bio` (optional, a short
+  line under the name), `Photo` (optional, see below). Rows with the same
+  Committee are grouped together under that heading, in first-appearance
+  order. Blank rows are ignored.
+- **Season:** the year on the page (e.g. `2026–2027`) comes from a tab called
+  `Settings` with a `Season` row (column A `Season`, column B the value). If
+  there is no such tab the current year stays.
+- **Photos:** drop a photo into the shared Drive folder named after the person
+  exactly as in the sheet, e.g. `Josh Kwon.jpg` (`.png`, `.webp` and `.heic`
+  also work; capitalisation, spaces and accents don't matter). To use a
+  different file name, put it in the person's `Photo` column. The sync trims
+  any flat frame, centre-crops to a square and shrinks to 512×512, so upload
+  the original. A person with no photo gets a grey placeholder. Photos of
+  people no longer in the sheet are removed from the site.
+
+### One-time setup
+
+1. **Google Cloud API key.** In [console.cloud.google.com](https://console.cloud.google.com/)
+   create a project, enable the *Google Sheets API* and *Google Drive API*
+   (APIs & Services → Library), then create an API key (APIs & Services →
+   Credentials) and restrict it to those two APIs. The key only ever reads.
+2. **Share the sheet and the folder** as *Anyone with the link → Viewer*
+   (API keys can only read public files). Board members who edit get
+   *Editor* access individually. The emails and photos are published on the
+   site anyway, so nothing new becomes public.
+3. **Repository secrets** (Settings → Secrets and variables → Actions):
+   `GOOGLE_API_KEY`, `BOARD_SHEET_ID` (the long id in the sheet's URL,
+   `/spreadsheets/d/<id>/edit`) and `BOARD_DRIVE_FOLDER_ID` (the id in the
+   folder's URL, `/folders/<id>`).
+4. Run the action once by hand (Actions → Sync executive board → Run
+   workflow) and check the page.
+
+To run the same thing locally, or to check a sheet without changing anything:
+
+```
+python3 -m pip install pillow
+GOOGLE_API_KEY=... BOARD_SHEET_ID=... BOARD_DRIVE_FOLDER_ID=... python3 tools/sync_board.py --check
+python3 tools/sync_board.py && python3 tools/build.py
+```
+
+`src/data/board.json` can also be edited by hand and rebuilt with
+`tools/build.py` if Google is ever out of the picture.
 
 ## Preview locally
 

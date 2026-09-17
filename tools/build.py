@@ -30,7 +30,9 @@ Each page starts with a front-matter block::
     ---
 
 Inside page bodies use ``{{root}}`` for links/assets so pages work at any depth
-(e.g. ``{{root}}assets/img/x.svg`` or ``{{root}}membership/``).
+(e.g. ``{{root}}assets/img/x.svg`` or ``{{root}}membership/``). ``{{board}}``
+and ``{{season}}`` (in bodies and front matter) are the Executive Board roster
+and season from ``src/data/board.json``, rendered by ``tools/board.py``.
 
 SITE_URL must be the address the site is served from: it is used for canonical
 links, link previews, structured data, the sitemap and robots.txt.
@@ -42,6 +44,9 @@ import pathlib
 import re
 import subprocess
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import board  # noqa: E402  (tools/board.py: the Executive Board roster)
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
@@ -316,6 +321,10 @@ def build():
     if not pages:
         sys.exit("no pages found in src/pages")
     titles = {slug: meta.get("title", SITE_NAME) for _, meta, _, slug in pages if not meta.get("out")}
+    try:
+        roster = board.load()
+    except board.RosterError as err:
+        sys.exit(f"executive board: {err}")
     written, sitemap = [], []
     for path, meta, body, slug in pages:
         out_name = meta.get("out")
@@ -328,7 +337,7 @@ def build():
             out_path = (ROOT / slug / "index.html") if slug else (ROOT / "index.html")
         title = meta.get("title", SITE_NAME)
         full_title = meta.get("seo_title") or f"{title} | {SITE_NAME} — {SITE_LONG_NAME}"
-        description = meta.get("description", "")
+        description = meta.get("description", "").replace("{{season}}", roster["season"])
         canonical = "" if out_name else page_url(slug)
         hero = meta.get("hero", "")
         generated = f"assets/img/og/{slug.replace('/', '-') or 'home'}.jpg"
@@ -344,7 +353,9 @@ def build():
             "body_class": meta.get("body_class", "page"),
             "seo": seo_block(root, canonical, full_title, description, image_abs, hero, noindex),
             "jsonld": "" if noindex else structured_data(slug, canonical, full_title, description, image_abs, titles),
-            "content": body.replace("{{root}}", root),
+            "content": (body.replace("{{board}}", board.render(roster, root))
+                            .replace("{{season}}", esc(roster["season"]))
+                            .replace("{{root}}", root)),
         }
         out = layout
         for key, value in values.items():

@@ -43,27 +43,27 @@
 </header>
 <main id="main">
 <!--
-  2026/2027 board roster, grouped by committee (two members per group).
+  The board roster is NOT written here. It is rendered by tools/build.py from
+  src/data/board.json, which tools/sync_board.py refreshes from the club's
+  Google Sheet (see "Updating the Executive Board" in the README). The board
+  placeholder below becomes one .board-group section per committee, in sheet
+  order, and the season placeholder is the "Season" value from the sheet's
+  Settings tab.
 
-  To update a member, edit the name, the "meta" line (school and class year)
-  and the two places the email appears: the mailto: href and the
-  .member__email overlay text (shown when the photo is hovered / focused).
-  Clicking a photo copies the address to the clipboard (assets/js/site.js);
-  without JavaScript the mailto: link opens the mail client instead.
+  Headshots live in exec-board/pictures/, one 512x512 WebP per member named
+  after them (e.g. pictures/Josh Kwon.webp). The sync script makes them from
+  the photos in the shared Google Drive folder; tools/make_headshots.py does
+  the same for a local folder of portraits. A member with no headshot gets
+  assets/img/headshot-placeholder.svg.
 
-  Headshots live in exec-board/pictures/, one file per member named after them
-  (e.g. pictures/Josh Kwon.webp). To swap one, replace that file, or point the
-  member's <img src> at a new name -- spaces must be escaped as %20. Each file
-  is a 512x512 WebP made by tools/make_headshots.py, which trims the thin blue
-  frame the source portraits carry and centre-crops them to a square. The
-  full-resolution PNGs are in git history at commit 0ef33a2.
-
-  Phone numbers are intentionally not published.
+  Clicking a photo copies the member's email to the clipboard
+  (assets/js/site.js); without JavaScript the mailto: link opens the mail
+  client instead. Phone numbers are intentionally not published.
 -->
 <section class="page-hero">
   <div class="page-hero__media"><img class="kb" fetchpriority="high" src="../assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline."></div>
   <div class="page-hero__panel">
-    <p class="eyebrow" data-reveal>2026&ndash;2027</p>
+    <p class="eyebrow" data-reveal>2026–2027</p>
     <h1 data-reveal>Executive Board</h1>
   </div>
 </section>
@@ -71,7 +71,6 @@
 <section class="section">
   <div class="wrap">
     <div class="board">
-
     <section class="board-group" data-reveal>
       <h2 class="board-group__title">Co-Presidents</h2>
       <div class="board-group__members">
@@ -146,7 +145,7 @@
       <div class="board-group__members">
         <div class="member">
           <a class="member__photo-link" href="mailto:sistonen@wharton.upenn.edu" aria-label="Email Samuli Sistonen">
-            <img class="member__photo" src="pictures/Samuli%20Sistone.webp" alt="Samuli Sistonen">
+            <img class="member__photo" src="pictures/Samuli%20Sistonen.webp" alt="Samuli Sistonen">
             <span class="member__email" aria-hidden="true">sistonen@<br>wharton.upenn.edu</span>
           </a>
           <h3>Samuli Sistonen</h3>
@@ -301,7 +300,6 @@
         </div>
       </div>
     </section>
-
     </div>
   </div>
 </section>
