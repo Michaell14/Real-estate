@@ -457,6 +457,9 @@ main { animation: none; }
 .gallery figure:hover img { transform: scale(1.04); }
 .gallery figcaption { font-weight: 400; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--caption); }
 
+/* Not-found page ---------------------------------------------------------- */
+.notfound { min-height: 72vh; display: flex; align-items: center; padding-top: var(--header-h); }
+
 /* Footer ----------------------------------------------------------------- */
 .site-footer { border-top: 1px solid var(--hairline); padding: 72px 0 48px; color: rgba(255, 255, 255, .7); font-size: .85rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 48px; margin-bottom: 56px; }

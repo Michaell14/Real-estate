@@ -109,10 +109,3 @@ write("headshot.svg",
       '<rect width="200" height="200" fill="#474747"/>'
       '<circle cx="100" cy="78" r="36" fill="#989898"/>'
       '<path d="M30 200c0-45 31-72 70-72s70 27 70 72z" fill="#989898"/></svg>')
-
-# Favicon ---------------------------------------------------------------------
-write("favicon.svg",
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-      '<rect width="64" height="64" rx="10" fill="#1159ad"/>'
-      '<text x="32" y="43" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" '
-      'font-weight="700" font-size="34" fill="#ffffff">W</text></svg>')
