@@ -10,8 +10,9 @@ Reads ``src/layout.html`` (shared header/footer) and every page in
     src/pages/membership.html        -> membership/index.html
     src/pages/treks-highlights.html  -> treks/highlights/index.html   (slug: treks/highlights)
 
-It also writes ``sitemap.xml``, ``robots.txt``, ``404.html`` and a small
-redirect page for every old address listed in ``REDIRECTS``.
+It also writes ``sitemap.xml``, ``robots.txt``, ``404.html``, a small redirect
+page for every old address listed in ``REDIRECTS`` and ``vercel.json``, which
+turns those old addresses into real HTTP redirects on Vercel.
 
 Each page starts with a front-matter block::
 
@@ -120,6 +121,14 @@ Disallow: /carousel/
 
 Sitemap: {SITE_URL}/sitemap.xml
 """
+
+CACHE_LONG = "public, max-age=604800, stale-while-revalidate=86400"   # photos, icons: a week
+CACHE_SHORT = "public, max-age=3600, stale-while-revalidate=86400"    # css, js: an hour
+SECURITY_HEADERS = [
+    {"key": "X-Content-Type-Options", "value": "nosniff"},
+    {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+    {"key": "X-Frame-Options", "value": "SAMEORIGIN"},
+]
 
 
 def esc(text):
@@ -262,6 +271,30 @@ def write_redirects(titles):
     return written
 
 
+def write_vercel():
+    """vercel.json: one address per page (trailing slash), 308 redirects for the
+    old addresses, the source folders sent home, and cache/security headers."""
+    redirects = []
+    for old, new in REDIRECTS.items():
+        destination = f"/{new}/" if new else "/"
+        for source in (f"/{old}", f"/{old}/"):
+            redirects.append({"source": source, "destination": destination, "permanent": True})
+    for folder in ("src", "tools", "carousel"):
+        redirects.append({"source": f"/{folder}/:path*", "destination": "/", "permanent": False})
+    config = {
+        "$schema": "https://openapi.vercel.sh/vercel.json",
+        "trailingSlash": True,
+        "redirects": redirects,
+        "headers": [
+            {"source": "/assets/img/(.*)", "headers": [{"key": "Cache-Control", "value": CACHE_LONG}]},
+            {"source": "/exec-board/pictures/(.*)", "headers": [{"key": "Cache-Control", "value": CACHE_LONG}]},
+            {"source": "/assets/(css|js)/(.*)", "headers": [{"key": "Cache-Control", "value": CACHE_SHORT}]},
+            {"source": "/(.*)", "headers": SECURITY_HEADERS},
+        ],
+    }
+    (ROOT / "vercel.json").write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+
+
 def write_sitemap(entries):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
@@ -323,10 +356,11 @@ def build():
             sitemap.append((canonical, last_modified(path), image_abs))
     redirects = write_redirects(titles)
     write_sitemap(sitemap)
+    write_vercel()
     (ROOT / "robots.txt").write_text(ROBOTS_TXT, encoding="utf-8")
     for item in written:
         print("wrote", item)
-    print(f"{len(written)} pages built, {len(redirects)} redirects, sitemap.xml and robots.txt written")
+    print(f"{len(written)} pages built, {len(redirects)} redirects, sitemap.xml, robots.txt and vercel.json written")
 
 
 if __name__ == "__main__":
