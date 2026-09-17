@@ -1,8 +1,9 @@
-/* WUREC site behaviour: sticky header state, mobile menu, nav folders, photo carousel. */
+/* WUREC site behaviour: sticky header state, mobile menu, nav folders, reveal-on-scroll, filmstrip. */
 (function () {
   var header = document.querySelector('.site-header');
   var nav = document.querySelector('.site-nav');
   var toggle = document.querySelector('.nav-toggle');
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   function onScroll() {
     header.classList.toggle('scrolled', window.scrollY > 40);
@@ -44,82 +45,38 @@
     }
   });
 
-  /* Photo carousel: arrows, thumbnail tabs, keyboard, swipe and autoplay.
-     Autoplay pauses while hovered or keyboard-focused and when the tab is hidden,
-     and stays off for users who prefer reduced motion. */
-  Array.prototype.forEach.call(document.querySelectorAll('.carousel'), function (root) {
-    var slides = root.querySelectorAll('.carousel__slide');
-    var thumbs = root.querySelectorAll('.carousel__thumb');
-    var strip = root.querySelector('.carousel__thumbs');
-    var live = root.querySelector('.carousel__slides');
-    var interval = parseInt(root.getAttribute('data-interval'), 10) || 5000;
-    var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
-    var paused = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    var index = 0, timer = null, hovered = false, focused = false, touchX = null, touchY = null;
-    if (slides.length < 2) { return; }
-
-    function show(i) {
-      index = (i + slides.length) % slides.length;
-      Array.prototype.forEach.call(slides, function (slide, n) {
-        slide.classList.toggle('is-active', n === index);
-        slide.setAttribute('aria-hidden', String(n !== index));
+  /* Reveal on scroll: elements marked data-reveal fade up once they enter the viewport.
+     Siblings are staggered by 120ms. Without IntersectionObserver, or with reduced motion,
+     everything is shown at once. */
+  var revealed = document.querySelectorAll('[data-reveal]');
+  function showAll() {
+    Array.prototype.forEach.call(revealed, function (el) { el.classList.add('is-visible'); });
+  }
+  if (!('IntersectionObserver' in window) || reduceMotion) {
+    showAll();
+  } else {
+    Array.prototype.forEach.call(revealed, function (el) {
+      var siblings = el.parentElement ? el.parentElement.querySelectorAll(':scope > [data-reveal]') : [];
+      var index = Array.prototype.indexOf.call(siblings, el);
+      if (index > 0) { el.style.transitionDelay = Math.min(index, 5) * 120 + 'ms'; }
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) { return; }
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
-      Array.prototype.forEach.call(thumbs, function (thumb, n) {
-        var on = n === index;
-        thumb.classList.toggle('is-active', on);
-        thumb.setAttribute('aria-selected', String(on));
-        thumb.tabIndex = on ? 0 : -1;
-      });
-      var active = thumbs[index];
-      if (strip && active) {
-        var left = active.offsetLeft - (strip.clientWidth - active.offsetWidth) / 2;
-        if (strip.scrollTo) { strip.scrollTo({ left: left, behavior: 'smooth' }); } else { strip.scrollLeft = left; }
-      }
-    }
-    function rotating() { return !paused && !hovered && !focused && !document.hidden; }
-    function schedule() {
-      clearTimeout(timer);
-      if (live) { live.setAttribute('aria-live', rotating() ? 'off' : 'polite'); }
-      if (rotating()) { timer = setTimeout(function () { show(index + 1); schedule(); }, interval); }
-    }
-    function step(delta) { show(index + delta); schedule(); }
-    /* A mouse click leaves focus on the button it hit; only keyboard focus should hold the slideshow. */
-    function keyboardFocus(el) {
-      try { return el.matches(':focus-visible'); } catch (err) { return true; }
-    }
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    Array.prototype.forEach.call(revealed, function (el) { observer.observe(el); });
+    /* Anything already in view at load, or missed by the observer, shows after a moment. */
+    window.setTimeout(showAll, 2500);
+  }
 
-    root.querySelector('.carousel__arrow--prev').addEventListener('click', function () { step(-1); });
-    root.querySelector('.carousel__arrow--next').addEventListener('click', function () { step(1); });
-    Array.prototype.forEach.call(thumbs, function (thumb, n) {
-      thumb.addEventListener('click', function () { show(n); schedule(); });
-    });
-
-    root.addEventListener('keydown', function (e) {
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') { return; }
-      e.preventDefault();
-      step(e.key === 'ArrowLeft' ? -1 : 1);
-      if (e.target.classList && e.target.classList.contains('carousel__thumb')) { thumbs[index].focus(); }
-    });
-    if (canHover) {
-      root.addEventListener('mouseenter', function () { hovered = true; schedule(); });
-      root.addEventListener('mouseleave', function () { hovered = false; schedule(); });
-    }
-    root.addEventListener('focusin', function (e) { focused = keyboardFocus(e.target); schedule(); });
-    root.addEventListener('focusout', function (e) {
-      if (!root.contains(e.relatedTarget)) { focused = false; schedule(); }
-    });
-    root.addEventListener('touchstart', function (e) {
-      touchX = e.changedTouches[0].clientX; touchY = e.changedTouches[0].clientY;
-    }, { passive: true });
-    root.addEventListener('touchend', function (e) {
-      if (touchX === null) { return; }
-      var dx = e.changedTouches[0].clientX - touchX, dy = e.changedTouches[0].clientY - touchY;
-      touchX = touchY = null;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { step(dx < 0 ? 1 : -1); }
-    }, { passive: true });
-    document.addEventListener('visibilitychange', schedule);
-
-    schedule();
+  /* Filmstrip: the slow drift stops once the visitor scrolls the strip themselves. */
+  Array.prototype.forEach.call(document.querySelectorAll('.strip'), function (strip) {
+    var track = strip.querySelector('.strip__track');
+    if (!track) { return; }
+    track.addEventListener('scroll', function () { strip.classList.add('is-touched'); }, { passive: true, once: true });
   });
 
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
