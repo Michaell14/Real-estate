@@ -374,6 +374,34 @@ main { animation: none; }
 .feature p { font-size: .95rem; }
 .feature .link { margin-top: .6rem; }
 
+/* Trek ledger (text-only list of past treks, grouped by city) ------------- */
+.ledger { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 32px 64px; padding: 48px 0; border-top: 1px solid var(--hairline); align-items: start; }
+.ledger:last-child { border-bottom: 1px solid var(--hairline); }
+.ledger__city { display: flex; flex-direction: column; gap: 10px; }
+.ledger__city h3 { margin: 0; font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 300; }
+.ledger__count { font-weight: 400; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--caption); }
+.ledger__rows { display: flex; flex-direction: column; }
+.ledger__row { padding: 24px 0; border-top: 1px solid var(--hairline); color: var(--text); }
+.ledger__row:first-child { border-top: 0; padding-top: 0; }
+.ledger__title { margin: 0 0 8px; font-size: 1.5rem; font-weight: 400; line-height: 1.15; }
+.ledger__desc { margin: 0; font-size: .95rem; line-height: 1.7; max-width: 640px; }
+.ledger__meta { display: inline-block; margin-top: 12px; font-weight: 400; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--caption); }
+
+/* Cities (large-type list) ------------------------------------------------- */
+.cities { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
+.cities li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 32px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+.cities__num { font-weight: 400; font-size: 11px; letter-spacing: .3em; color: var(--caption); }
+.cities__name { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; color: var(--ink); display: inline-block; transition: color .4s, transform .6s var(--ease); }
+.cities li:hover .cities__name { color: var(--caption); transform: translateX(10px); }
+/* A photo for the city fades in at the right of the list while its row is hovered. */
+.cities { position: relative; }
+.cities__photo {
+  position: absolute; right: 0; top: 50%; z-index: 1; width: min(34%, 420px); aspect-ratio: 3 / 2; object-fit: cover;
+  opacity: 0; transform: translateY(-50%) scale(.96); pointer-events: none;
+  transition: opacity .6s var(--ease), transform .9s var(--ease);
+}
+.cities li:hover .cities__photo { opacity: 1; transform: translateY(-50%) scale(1); }
+
 /* Committees and lists --------------------------------------------------- */
 .committees { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.6rem 3rem; }
 .committee { border-top: 1px solid var(--hairline-strong); padding-top: 1.4rem; }
@@ -417,15 +445,17 @@ main { animation: none; }
   border-radius: 50%; border: 1px solid rgba(255, 255, 255, .7); display: none;
   background: var(--blue) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='M3.5 7.5 12 13.5l8.5-6'/></svg>") center / 15px no-repeat;
 }
-@media (hover: none) { .member__photo-link::after { display: block; } .member__photo, .person__photo img { filter: none; } }
+@media (hover: none) { .member__photo-link::after { display: block; } .member__photo, .person__photo img { filter: none; } .cities__photo { display: none; } }
 .member h3 { font-family: var(--font-label); font-weight: 500; font-size: .95rem; letter-spacing: .02em; line-height: 1.4; margin: 14px 0 4px; }
 .member .meta { font-family: var(--font-label); font-weight: 400; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--caption); margin: 0; }
 
 /* Gallery ---------------------------------------------------------------- */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.gallery figure { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface); }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 24px; }
+.gallery figure { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.gallery__img { aspect-ratio: 3 / 2; overflow: hidden; background: var(--surface); }
 .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
 .gallery figure:hover img { transform: scale(1.04); }
+.gallery figcaption { font-weight: 400; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--caption); }
 
 /* Footer ----------------------------------------------------------------- */
 .site-footer { border-top: 1px solid var(--hairline); padding: 72px 0 48px; color: rgba(255, 255, 255, .7); font-size: .85rem; }
@@ -492,6 +522,8 @@ main { animation: none; }
   .page-hero__media { min-height: 38vh; min-height: 38svh; }
   .hero-split__panel, .page-hero__panel { padding: 48px var(--gutter) 64px; }
   .split { grid-template-columns: 1fr; gap: 32px; }
+  .ledger { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+  .cities__photo { display: none; }
   .grid--2, .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .feature { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
   .feature:nth-child(even) .feature__img { order: 0; }
@@ -518,7 +550,7 @@ main { animation: none; }
   .numbers .wrap { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
   .people { grid-template-columns: repeat(2, 1fr); }
   .grid--2, .grid--3 { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
   .board-group__members { gap: 1.2rem; }
   .member__email { font-size: .66rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
