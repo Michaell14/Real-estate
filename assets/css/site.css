@@ -449,13 +449,13 @@ main { animation: none; }
   border-radius: 50%; border: 1px solid rgba(255, 255, 255, .7); display: none;
   background: var(--blue) url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='5' width='18' height='14' rx='2'/><path d='M3.5 7.5 12 13.5l8.5-6'/></svg>") center / 15px no-repeat;
 }
-/* With JavaScript a click copies the address; the band says so, then confirms */
-.js .member__email::after {
-  content: "Click to copy"; display: block; margin-top: 3px;
-  font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255, 255, 255, .6);
-}
+/* After a click copies the address, the band confirms it for a moment */
 .member__photo-link.is-copied .member__email { opacity: 1; transform: none; }
-.member__photo-link.is-copied .member__email::after { content: "Copied to clipboard"; color: #fff; }
+.member__photo-link.is-copied .member__email::after {
+  display: block; margin-top: 3px;
+  font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: #fff;
+}
+.member__photo-link.is-copied .member__email::after { content: "Copied to clipboard"; }
 .member__photo-link.is-copied::after { display: none; }
 .member__photo-link.is-copied .member__email::before { background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7'/></svg>"); }
 @media (hover: none) { .member__photo-link::after { display: block; } .member__photo, .person__photo img { filter: none; } .cities__photo { display: none; } }
