@@ -33,6 +33,7 @@ assets/img/carousel/ home-page carousel slides, generated from carousel/
 carousel/            original photos for the home-page carousel
 tools/build.py       renders src/pages/* into the root as <slug>/index.html
 tools/make_carousel.py  resizes carousel/ photos into assets/img/carousel/
+tools/make_headshots.py trims and squares board portraits into exec-board/pictures/
 ```
 
 1. Edit a page in `src/pages/` (or the nav list at the top of `tools/build.py`).
@@ -72,8 +73,10 @@ the placeholders below with the club's own material:
   `<img src>` paths in `src/pages/`.
 - **Executive Board** (`src/pages/exec-board.html`) — the 2026–27 roster and
   headshots are current. Headshots live in `exec-board/pictures/` as square
-  512×512 WebPs and are shown as squares; the comment at the top of the page
-  explains how to swap one.
+  512×512 WebPs. To add or replace one, put the portrait in a folder and run
+  `python3 tools/make_headshots.py <folder>` (needs Pillow); it trims any
+  flat-coloured frame, centre-crops to a square and writes the WebP. The
+  comment at the top of the page explains the file naming.
 - **Site title font** — the WUREC wordmark in the header and footer is set in
   Centaur, which is bundled with Microsoft Office but is not a free web font.
   Visitors without it see Cormorant Garamond (Google Fonts) instead. To show
