@@ -8,21 +8,24 @@
 <meta property="og:title" content="Executive Board — WUREC">
 <meta property="og:description" content="Meet the 2026–2027 WUREC Executive Board — the students who run the Wharton Undergraduate Real Estate Club.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="header-inner">
     <a class="site-title" href="../">WUREC</a>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-      <ul><li><a href="../">Home</a></li><li><a href="../membership/">Membership</a></li><li class="folder"><button class="folder-toggle" type="button" aria-expanded="false" aria-haspopup="true">Events<svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><ul class="sub"><li><a href="../featured-events/">Events</a></li><li><a href="../treks/">Treks</a></li><li><a href="../new-page-1/">Speakers</a></li><li><a href="../new-page-2/">Case Comps</a></li></ul></li><li><a href="../exec-board/" aria-current="page">Executive Board</a></li></ul>
+      <ul><li><a href="../membership/">Membership</a></li><li class="folder"><button class="folder-toggle" type="button" aria-expanded="false" aria-haspopup="true">Events<svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><ul class="sub"><li><a href="../featured-events/">Events</a></li><li><a href="../treks/">Treks</a></li><li><a href="../new-page-1/">Speakers</a></li><li><a href="../new-page-2/">Case Comps</a></li></ul></li><li><a href="../exec-board/" aria-current="page">Executive Board</a></li></ul>
     </nav>
+    <a class="header-cta" href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Join WUREC</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main id="main">
@@ -36,23 +39,26 @@
   Headshots live in exec-board/pictures/, one file per member named after them
   (e.g. pictures/Josh Kwon.webp). To swap one, replace that file, or point the
   member's <img src> at a new name -- spaces must be escaped as %20. Each file
-  is a 512x512 WebP centre-cropped from the original PNG and shown as a square.
-  The full-resolution PNGs are in git history at commit 3cbca44.
+  is a 512x512 WebP made by tools/make_headshots.py, which trims the thin blue
+  frame the source portraits carry and centre-crops them to a square. The
+  full-resolution PNGs are in git history at commit 0ef33a2.
 
   Phone numbers are intentionally not published.
 -->
-<div class="page-banner">
-  <div class="wrap">
-    <h1>Executive Board</h1>
-    <p class="subtitle">The 2026&ndash;2027 WUREC board. Hover over or tap a photo to email a board member.</p>
+<section class="page-hero">
+  <div class="page-hero__media"><img class="kb" src="../assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them."></div>
+  <div class="page-hero__panel">
+    <p class="eyebrow" data-reveal>Executive Board &middot; 2026&ndash;2027</p>
+    <h1 data-reveal>Led by students.</h1>
+    <p class="subtitle" data-reveal>Twenty students across eight committees. Hover over or tap a photo to email a board member.</p>
   </div>
-</div>
+</section>
 
 <section class="section">
   <div class="wrap">
     <div class="board">
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Co-Presidents</h2>
       <div class="board-group__members">
         <div class="member">
@@ -75,7 +81,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Treks</h2>
       <div class="board-group__members">
         <div class="member">
@@ -98,7 +104,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Careers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -121,7 +127,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Speakers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -144,7 +150,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Communications</h2>
       <div class="board-group__members">
         <div class="member">
@@ -167,7 +173,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Internal</h2>
       <div class="board-group__members">
         <div class="member">
@@ -190,7 +196,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Treasurers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -213,7 +219,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">The Institute</h2>
       <div class="board-group__members">
         <div class="member">
@@ -236,7 +242,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Investments</h2>
       <div class="board-group__members">
         <div class="member">
@@ -259,7 +265,7 @@
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Infrastructure</h2>
       <div class="board-group__members">
         <div class="member">
@@ -286,31 +292,42 @@
   </div>
 </section>
 
-<section class="section section--alt section--tight">
-  <div class="wrap narrow center">
-    <h2>Committees</h2>
-    <p>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications &middot; Infrastructure</p>
-    <a class="btn btn--ghost btn--small" href="../membership/">Learn About Our Committees</a>
+<section class="section section--line center">
+  <div class="wrap narrow" data-reveal>
+    <p class="eyebrow">Committees</p>
+    <h2>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications &middot; Infrastructure</h2>
+    <a class="btn" href="../membership/" style="margin-top: 1.4rem">Learn about our committees</a>
   </div>
 </section>
 
 </main>
 <footer class="site-footer">
-  <div class="wrap">
-    <a class="footer-title" href="../">WUREC</a>
-    <p class="footer-tagline">Wharton Undergraduate Real Estate Club &middot; The Wharton School, University of Pennsylvania</p>
-    <ul class="social" aria-label="Social media">
-      <li><a href="https://www.instagram.com/wurec_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a></li>
-      <li><a href="https://www.facebook.com/wurec" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="17" fill="currentColor">f</text></svg></a></li>
-      <li><a href="https://www.linkedin.com/company/wharton-undergraduate-real-estate-group" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="currentColor">in</text></svg></a></li>
-      <li><a href="https://x.com/WUREC" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="currentColor">X</text></svg></a></li>
-    </ul>
-    <nav class="footer-nav" aria-label="Footer navigation">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="footer-title" href="../">WUREC</a>
+      <p>Wharton Undergraduate Real Estate Club<br>The Wharton School, University of Pennsylvania</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">Club</span>
       <a href="../membership/">Membership</a>
       <a href="../featured-events/">Events</a>
       <a href="../exec-board/">Executive Board</a>
-    </nav>
-    <p class="copyright">&copy; <span data-year>2025</span> Wharton Undergraduate Real Estate Club</p>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">Connect</span>
+      <a href="https://www.instagram.com/wurec_/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/wharton-undergraduate-real-estate-group" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/wurec" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://x.com/WUREC" target="_blank" rel="noopener">X</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">Join</span>
+      <a href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Sign up to the listserv</a>
+      <a href="https://pennclubs.com/club/wharton-undergraduate-real-estate-club/" target="_blank" rel="noopener">WUREC on Penn Clubs</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span data-year>2025</span> Wharton Undergraduate Real Estate Club</span>
     <small>As a Wharton Council-recognized student organization, WUREC adheres to the University of Pennsylvania Policy on Equal Opportunity.</small>
   </div>
 </footer>

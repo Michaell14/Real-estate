@@ -4,114 +4,168 @@ slug:
 description: The Wharton Undergraduate Real Estate Club (WUREC) is dedicated to everything real estate — exposing University of Pennsylvania undergraduates to the real estate industry and its diverse opportunities.
 body_class: home
 ---
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">The Wharton School &middot; University of Pennsylvania</p>
-    <h1>Wharton Undergraduate<br>Real Estate Club</h1>
-    <p class="lede">The Wharton Undergraduate Real Estate Club is dedicated to everything real estate.</p>
-    <div class="actions">
-      <a class="btn btn--light" href="{{root}}membership/">Join WUREC</a>
-      <a class="btn btn--outline-light" href="#mission">Learn More</a>
+<section class="hero-split" id="top">
+  <div class="hero-split__media">
+    <img class="kb" src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them." fetchpriority="high">
+  </div>
+  <div class="hero-split__panel">
+    <p class="eyebrow" data-reveal>The Wharton School &middot; University of Pennsylvania</p>
+    <h1 data-reveal>Wharton Undergraduate Real Estate Club</h1>
+    <span class="rule" aria-hidden="true"></span>
+    <p class="lede" data-reveal>Treks to leading firms, conversations with industry leaders and case competitions against the country&rsquo;s best programs.</p>
+    <div class="hero-split__links" data-reveal>
+      <a class="link" href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Join WUREC</a>
+      <a class="link" href="#programs">Explore programs</a>
     </div>
   </div>
-  <a class="scroll-cue" href="#mission" aria-label="Scroll to learn more"></a>
 </section>
 
-<section class="section mission" id="mission">
-  <div class="wrap mission__inner">
-    <h2 class="section-title section-title--accent">WUREC&rsquo;s Mission</h2>
-    <p>The <strong>Wharton Undergraduate Real Estate Club</strong> is dedicated to exposing Penn undergrads to the real estate industry and its various opportunities. It seeks to provide an intellectual environment that not only allows students to learn, but also to network and build meaningful foundations for success in real estate.</p>
-    <p><strong>WUREC</strong> provides increased access to many <strong>Zell/Lurie Real Estate Center</strong> offerings, including the <strong>Ballard Executive Visitor Luncheon Series</strong>, the <strong>Career Mentor Program</strong>, and the <strong>Spring and Fall Members&rsquo; Meetings</strong>. Additionally, active members will also have access to MBA/Undergraduate Real Estate Club Mixers, site visits, MBA Lecture Series events, and the Resume Book.</p>
-    <p>Whether you want to learn about investing and job opportunities, or simply have a general interest in real estate, please sign up via the link below. Then, look out for upcoming <strong>speakers</strong>, <strong>social events</strong>, <strong>and opportunities</strong>!</p>
-    <p class="mission__rule"><strong>All members must attend at least three events per semester to retain membership.</strong></p>
-    <div class="actions">
-      <a class="btn" href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Sign Up</a>
+<section class="section" id="mission">
+  <div class="wrap split">
+    <div data-reveal>
+      <p class="eyebrow">Our mission</p>
+      <h2>Dedicated to exposing Penn undergraduates to the real estate industry and its many opportunities.</h2>
+    </div>
+    <div data-reveal>
+      <p>The Wharton Undergraduate Real Estate Club seeks to provide an intellectual environment that not only allows students to learn, but also to network and build meaningful foundations for success in real estate.</p>
+      <p>WUREC provides increased access to many Zell/Lurie Real Estate Center offerings, including the Ballard Executive Visitor Luncheon Series, the Career Mentor Program, and the Spring and Fall Members&rsquo; Meetings. Active members also have access to MBA/Undergraduate Real Estate Club Mixers, site visits, MBA Lecture Series events, and the Resume Book.</p>
+      <p><strong>All members must attend at least three events per semester to retain membership.</strong></p>
+      <a class="link" href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Sign up</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--line" id="programs">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2>Three ways in.</h2>
+      </div>
+      <a class="link" href="{{root}}featured-events/">All events</a>
+    </div>
+    <div class="index" data-reveal>
+      <a class="index__row" href="{{root}}new-page/">
+        <span class="index__num">01</span>
+        <span class="index__name">Treks</span>
+        <p class="index__desc">Small-group visits to top firms and property sites in New York, Philadelphia, Dubai and Chicago.</p>
+        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="index__row" href="{{root}}new-page-1/">
+        <span class="index__num">02</span>
+        <span class="index__name">Speakers</span>
+        <p class="index__desc">Talks and panels with leaders from Blackstone, Goldman Sachs, PJT Partners and Jefferies, as well as real estate CEOs.</p>
+        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="index__row" href="{{root}}new-page-2/">
+        <span class="index__num">03</span>
+        <span class="index__name">Case competitions</span>
+        <p class="index__desc">First place and the $10K prize at the International Cornell ICSC Retail Real Estate Case Competition.</p>
+        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
 <!--
-  Photo carousel. Slides come from assets/img/carousel/, which is generated
-  from the originals in carousel/ by  python3 tools/make_carousel.py .
-  To add or reorder photos: drop them in carousel/, run that script, then keep
-  the <li> slides and thumbnail <button>s below in step (one pair per photo,
-  in the order the script prints). data-interval is the autoplay delay in ms.
+  Filmstrip. Photos come from assets/img/carousel/, generated from the
+  originals in carousel/ by  python3 tools/make_carousel.py . To add or
+  reorder photos: drop them in carousel/, run that script, then keep the
+  <figure> list below in step with what it prints.
 -->
-<section class="section carousel-section" aria-label="WUREC in photos">
+<section class="section section--line strip" aria-label="WUREC in photos">
   <div class="wrap">
-    <div class="carousel" data-interval="5000" aria-roledescription="carousel" aria-label="WUREC in photos">
-      <div class="carousel__stage">
-        <ul class="carousel__slides" aria-live="off">
-          <li class="carousel__slide is-active" id="slide-1" role="tabpanel" aria-roledescription="slide" aria-label="1 of 8" aria-hidden="false">
-            <img src="{{root}}assets/img/carousel/01.jpg" alt="A speaker presenting to a full lecture hall of students." decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-2" role="tabpanel" aria-roledescription="slide" aria-label="2 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/02.jpg" alt="A presentation in front of two wall screens in a firm's boardroom." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-3" role="tabpanel" aria-roledescription="slide" aria-label="3 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/03.jpg" alt="A guest speaker beside a window overlooking the city skyline." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-4" role="tabpanel" aria-roledescription="slide" aria-label="4 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/04.jpg" alt="Speakers walking through a diagram on a whiteboard." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-5" role="tabpanel" aria-roledescription="slide" aria-label="5 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/05.jpg" alt="Members seated around a conference table listening to a presentation." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-6" role="tabpanel" aria-roledescription="slide" aria-label="6 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/06.jpg" alt="Members in hard hats and safety vests touring a construction site." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-7" role="tabpanel" aria-roledescription="slide" aria-label="7 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them." loading="lazy" decoding="async">
-          </li>
-          <li class="carousel__slide" id="slide-8" role="tabpanel" aria-roledescription="slide" aria-label="8 of 8" aria-hidden="true">
-            <img src="{{root}}assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline." loading="lazy" decoding="async">
-          </li>
-        </ul>
-        <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      </div>
-      <div class="carousel__thumbs" role="tablist" aria-label="Choose a photo">
-        <button class="carousel__thumb is-active" type="button" role="tab" aria-selected="true" aria-controls="slide-1" aria-label="Photo 1"><img src="{{root}}assets/img/carousel/01-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Photo 2" tabindex="-1"><img src="{{root}}assets/img/carousel/02-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="Photo 3" tabindex="-1"><img src="{{root}}assets/img/carousel/03-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-4" aria-label="Photo 4" tabindex="-1"><img src="{{root}}assets/img/carousel/04-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-5" aria-label="Photo 5" tabindex="-1"><img src="{{root}}assets/img/carousel/05-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-6" aria-label="Photo 6" tabindex="-1"><img src="{{root}}assets/img/carousel/06-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-7" aria-label="Photo 7" tabindex="-1"><img src="{{root}}assets/img/carousel/07-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-        <button class="carousel__thumb" type="button" role="tab" aria-selected="false" aria-controls="slide-8" aria-label="Photo 8" tabindex="-1"><img src="{{root}}assets/img/carousel/08-thumb.jpg" alt="" width="300" height="200" loading="lazy"></button>
-      </div>
+    <div class="section-head" data-reveal>
+      <p class="eyebrow" style="margin: 0">Recent</p>
+      <span class="note" style="margin: 0">Photographs from treks and events</span>
+    </div>
+  </div>
+  <div class="strip__track" style="padding-left: var(--gutter)">
+    <div class="strip__inner">
+      <figure class="strip__item strip__item--wide">
+        <a href="{{root}}new-page-1/"><img src="{{root}}assets/img/carousel/01.jpg" alt="A speaker presenting to a full lecture hall of students." loading="lazy"></a>
+        <figcaption>Speaker series</figcaption>
+      </figure>
+      <figure class="strip__item strip__item--narrow">
+        <a href="{{root}}new-page-2/"><img src="{{root}}assets/img/carousel/02.jpg" alt="A presentation in front of two wall screens in a firm's boardroom." loading="lazy"></a>
+        <figcaption>Boardroom</figcaption>
+      </figure>
+      <figure class="strip__item">
+        <a href="{{root}}new-page/"><img src="{{root}}assets/img/carousel/05.jpg" alt="Members seated around a conference table listening to a presentation." loading="lazy"></a>
+        <figcaption>On trek</figcaption>
+      </figure>
+      <figure class="strip__item strip__item--wide">
+        <a href="{{root}}new-page/"><img src="{{root}}assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline." loading="lazy"></a>
+        <figcaption>The view from the top</figcaption>
+      </figure>
+      <figure class="strip__item strip__item--narrow">
+        <a href="{{root}}new-page-1/"><img src="{{root}}assets/img/carousel/03.jpg" alt="A guest speaker beside a window overlooking the city skyline." loading="lazy"></a>
+        <figcaption>Fireside conversation</figcaption>
+      </figure>
+      <figure class="strip__item">
+        <a href="{{root}}new-page/"><img src="{{root}}assets/img/carousel/06.jpg" alt="Members in hard hats and safety vests touring a construction site." loading="lazy"></a>
+        <figcaption>Site tour</figcaption>
+      </figure>
+      <figure class="strip__item strip__item--wide">
+        <a href="{{root}}new-page-1/"><img src="{{root}}assets/img/carousel/04.jpg" alt="Speakers walking through a diagram on a whiteboard." loading="lazy"></a>
+        <figcaption>Whiteboard session</figcaption>
+      </figure>
+      <figure class="strip__item">
+        <a href="{{root}}exec-board/"><img src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them." loading="lazy"></a>
+        <figcaption>The group</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="panel" id="join">
+  <img class="panel__bg" src="{{root}}assets/img/carousel/06.jpg" alt="" loading="lazy">
+  <div class="panel__content" data-reveal>
+    <blockquote>An intellectual environment that not only allows students to learn, but also to network and build meaningful foundations for success in real estate.</blockquote>
+    <cite>From the WUREC mission</cite>
+    <a class="link" href="https://groups.wharton.upenn.edu/WUREC/club_signup" target="_blank" rel="noopener">Become a member</a>
+  </div>
+</section>
+
+<section class="numbers" aria-label="WUREC in numbers">
   <div class="wrap">
-    <h2 class="section-title">What We Do</h2>
-    <div class="grid grid--3">
-      <article class="card">
-        <a class="card__img" href="{{root}}new-page/"><img src="{{root}}assets/img/placeholder-treks.svg" alt="WUREC treks"></a>
-        <div class="card__body">
-          <h3><a href="{{root}}new-page/">Treks</a></h3>
-          <p>Small group trips to top real estate firms and property sites throughout the year. Recent Trek highlights have included NYC, Philadelphia, Dubai and Chicago.</p>
-          <a class="more" href="{{root}}new-page/">Learn More</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="card__img" href="{{root}}new-page-1/"><img src="{{root}}assets/img/placeholder-speakers.svg" alt="WUREC speaker series"></a>
-        <div class="card__body">
-          <h3><a href="{{root}}new-page-1/">Speakers</a></h3>
-          <p>In-person speaker series and panels that expose students to real estate insights from industry leaders. Past speakers have come from Blackstone, Goldman Sachs, and PJT, as well as real estate CEOs.</p>
-          <a class="more" href="{{root}}new-page-1/">Learn More</a>
-        </div>
-      </article>
-      <article class="card">
-        <a class="card__img" href="{{root}}new-page-2/"><img src="{{root}}assets/img/placeholder-casecomps.svg" alt="WUREC case competitions"></a>
-        <div class="card__body">
-          <h3><a href="{{root}}new-page-2/">Case Comps</a></h3>
-          <p>WUREC teams compete in real estate case competitions across the country, including a 1st place, $10K finish at the International Cornell ICSC Retail Real Estate Case Competition.</p>
-          <a class="more" href="{{root}}new-page-2/">Learn More</a>
-        </div>
-      </article>
+    <div class="number" data-reveal><strong>1st</strong><span>Cornell ICSC Retail Real Estate Case Competition</span></div>
+    <div class="number" data-reveal><strong>$10K</strong><span>Prize won by the WUREC team</span></div>
+    <div class="number" data-reveal><strong>20</strong><span>Board members across eight committees</span></div>
+    <div class="number" data-reveal><strong>3</strong><span>Events a semester keeps membership active</span></div>
+  </div>
+</section>
+
+<section class="section" id="board">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div>
+        <p class="eyebrow">Executive Board</p>
+        <h2>Led by students.</h2>
+      </div>
+      <a class="link" href="{{root}}exec-board/">Meet the board</a>
+    </div>
+    <div class="people">
+      <div class="person" data-reveal>
+        <a class="person__photo" href="{{root}}exec-board/"><img src="{{root}}exec-board/pictures/Josh%20Kwon.webp" alt="Josh Kwon" loading="lazy"></a>
+        <span class="person__name">Josh Kwon</span>
+        <span class="person__role">Co-President &middot; Wharton &rsquo;28</span>
+      </div>
+      <div class="person" data-reveal>
+        <a class="person__photo" href="{{root}}exec-board/"><img src="{{root}}exec-board/pictures/Griffin%20Albaugh.webp" alt="Griffin Albaugh" loading="lazy"></a>
+        <span class="person__name">Griffin Albaugh</span>
+        <span class="person__role">Co-President &middot; Wharton &rsquo;27</span>
+      </div>
+      <div class="person" data-reveal>
+        <a class="person__photo" href="{{root}}exec-board/"><img src="{{root}}exec-board/pictures/Evie%20Rosenfeld.webp" alt="Evie Rosenfeld" loading="lazy"></a>
+        <span class="person__name">Evie Rosenfeld</span>
+        <span class="person__role">Treks &middot; Wharton &rsquo;29</span>
+      </div>
+      <div class="person" data-reveal>
+        <a class="person__photo" href="{{root}}exec-board/"><img src="{{root}}exec-board/pictures/Frank%20de%20la%20Terga.webp" alt="Frank de la Terga" loading="lazy"></a>
+        <span class="person__name">Frank de la Terga</span>
+        <span class="person__role">Treks &middot; Wharton &rsquo;28</span>
+      </div>
     </div>
   </div>
 </section>

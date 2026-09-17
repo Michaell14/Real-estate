@@ -94,20 +94,21 @@ ICON_TROPHY = ('<g transform="translate(450 250)" fill="none" stroke="#ffffff" s
 ICON_CAMERA = ('<g transform="translate(450 250)" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">'
                '<path d="M-110 -40h50l20 -30h80l20 30h50v130h-220z"/><circle cx="0" cy="25" r="38"/></g>')
 
-tile("placeholder-treks.svg", 11, "#4179bb", "#1159ad", ICON_TREK)
-tile("placeholder-speakers.svg", 23, "#474747", "#000000", ICON_SPEAKER)
-tile("placeholder-casecomps.svg", 37, "#779dc9", "#4179bb", ICON_TROPHY)
-tile("placeholder-photo.svg", 51, "#989898", "#474747", ICON_CAMERA)
-tile("placeholder-nyc.svg", 63, "#4179bb", "#1159ad", "")
-tile("placeholder-philly.svg", 77, "#afc2d8", "#779dc9", "")
-tile("placeholder-chicago.svg", 89, "#989898", "#474747", "")
+# Dark tiles for the black site ground: charcoal or deep blue fading to black
+tile("placeholder-treks.svg", 11, "#474747", "#000000", ICON_TREK)
+tile("placeholder-speakers.svg", 23, "#1159ad", "#000000", ICON_SPEAKER)
+tile("placeholder-casecomps.svg", 37, "#4179bb", "#000000", ICON_TROPHY)
+tile("placeholder-photo.svg", 51, "#474747", "#000000", ICON_CAMERA)
+tile("placeholder-nyc.svg", 63, "#1159ad", "#000000", "")
+tile("placeholder-philly.svg", 77, "#474747", "#000000", "")
+tile("placeholder-chicago.svg", 89, "#4179bb", "#000000", "")
 
 # Headshot placeholder ---------------------------------------------------------
 write("headshot.svg",
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
-      '<rect width="200" height="200" fill="#eeeeee"/>'
-      '<circle cx="100" cy="78" r="36" fill="#afc2d8"/>'
-      '<path d="M30 200c0-45 31-72 70-72s70 27 70 72z" fill="#afc2d8"/></svg>')
+      '<rect width="200" height="200" fill="#474747"/>'
+      '<circle cx="100" cy="78" r="36" fill="#989898"/>'
+      '<path d="M30 200c0-45 31-72 70-72s70 27 70 72z" fill="#989898"/></svg>')
 
 # Favicon ---------------------------------------------------------------------
 write("favicon.svg",

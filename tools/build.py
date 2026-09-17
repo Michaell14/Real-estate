@@ -36,7 +36,6 @@ SITE_NAME = "WUREC"
 # Main navigation. A tuple of (label, slug) is a link; (label, None, children)
 # is a Squarespace-style "folder" with a dropdown.
 NAV = [
-    ("Home", ""),
     ("Membership", "membership"),
     ("Events", None, [
         ("Events", "featured-events"),

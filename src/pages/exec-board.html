@@ -13,23 +13,26 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
   Headshots live in exec-board/pictures/, one file per member named after them
   (e.g. pictures/Josh Kwon.webp). To swap one, replace that file, or point the
   member's <img src> at a new name -- spaces must be escaped as %20. Each file
-  is a 512x512 WebP centre-cropped from the original PNG and shown as a square.
-  The full-resolution PNGs are in git history at commit 3cbca44.
+  is a 512x512 WebP made by tools/make_headshots.py, which trims the thin blue
+  frame the source portraits carry and centre-crops them to a square. The
+  full-resolution PNGs are in git history at commit 0ef33a2.
 
   Phone numbers are intentionally not published.
 -->
-<div class="page-banner">
-  <div class="wrap">
-    <h1>Executive Board</h1>
-    <p class="subtitle">The 2026&ndash;2027 WUREC board. Hover over or tap a photo to email a board member.</p>
+<section class="page-hero">
+  <div class="page-hero__media"><img class="kb" src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them."></div>
+  <div class="page-hero__panel">
+    <p class="eyebrow" data-reveal>Executive Board &middot; 2026&ndash;2027</p>
+    <h1 data-reveal>Led by students.</h1>
+    <p class="subtitle" data-reveal>Twenty students across eight committees. Hover over or tap a photo to email a board member.</p>
   </div>
-</div>
+</section>
 
 <section class="section">
   <div class="wrap">
     <div class="board">
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Co-Presidents</h2>
       <div class="board-group__members">
         <div class="member">
@@ -52,7 +55,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Treks</h2>
       <div class="board-group__members">
         <div class="member">
@@ -75,7 +78,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Careers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -98,7 +101,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Speakers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -121,7 +124,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Communications</h2>
       <div class="board-group__members">
         <div class="member">
@@ -144,7 +147,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Internal</h2>
       <div class="board-group__members">
         <div class="member">
@@ -167,7 +170,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Treasurers</h2>
       <div class="board-group__members">
         <div class="member">
@@ -190,7 +193,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">The Institute</h2>
       <div class="board-group__members">
         <div class="member">
@@ -213,7 +216,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Investments</h2>
       <div class="board-group__members">
         <div class="member">
@@ -236,7 +239,7 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
       </div>
     </section>
 
-    <section class="board-group">
+    <section class="board-group" data-reveal>
       <h2 class="board-group__title">Infrastructure</h2>
       <div class="board-group__members">
         <div class="member">
@@ -263,10 +266,10 @@ description: Meet the 2026–2027 WUREC Executive Board — the students who run
   </div>
 </section>
 
-<section class="section section--alt section--tight">
-  <div class="wrap narrow center">
-    <h2>Committees</h2>
-    <p>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications &middot; Infrastructure</p>
-    <a class="btn btn--ghost btn--small" href="{{root}}membership/">Learn About Our Committees</a>
+<section class="section section--line center">
+  <div class="wrap narrow" data-reveal>
+    <p class="eyebrow">Committees</p>
+    <h2>Speakers &middot; Treks &middot; Careers &middot; Internal &middot; Investments &middot; The Institute &middot; Communications &middot; Infrastructure</h2>
+    <a class="btn" href="{{root}}membership/" style="margin-top: 1.4rem">Learn about our committees</a>
   </div>
 </section>
