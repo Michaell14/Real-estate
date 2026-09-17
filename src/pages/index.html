@@ -44,55 +44,113 @@ body_class: home
       </div>
       <a class="link" href="{{root}}membership/">Learn about membership</a>
     </div>
-    <div class="index" data-reveal>
-      <a class="index__row" href="{{root}}new-page/">
-        <span class="index__num">01</span>
-        <span class="index__name">Treks</span>
-        <p class="index__desc">The Treks Committee organizes small group trips to top real estate firms and property sites throughout the year. Some recent Treks highlights have included NYC, Los Angeles, Houston, Boston, Chicago, Dubai, and London.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}new-page-1/">
-        <span class="index__num">02</span>
-        <span class="index__name">Speakers</span>
-        <p class="index__desc">The Speakers Committee is responsible for organizing events with preeminent real estate executives where they offer insight into their company and submarket. Previous speaker events include Charles Kushner (Founder of Kushner Companies), John Carrafiell (Co-CEO of BGO), and Jim Garman (Global Head of Real Estate at Goldman Sachs), among others.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">03</span>
-        <span class="index__name">Careers</span>
-        <p class="index__desc">The Careers Committee is responsible for liaising with firms interested in recruiting Wharton students and increasing their presence on campus. Duties include facilitating job opportunity communications, organizing info sessions, and maintaining relations with real estate companies.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">04</span>
-        <span class="index__name">Communications</span>
-        <p class="index__desc">The Communications Committee is responsible for all marketing and listserv communication, as well as all club media including social media and the WUREC website.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">05</span>
-        <span class="index__name">Internal</span>
-        <p class="index__desc">The Internal Committee organizes all club social events and the WUREC recruiting process. Internal manages all membership-related activities, including the GBM program, and serves as a liaison to the Zell/Lurie Center.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">06</span>
-        <span class="index__name">The Institute</span>
-        <p class="index__desc">The Institute Committee focuses on teaching a holistic curriculum to all WUREC members that covers a broad range of real estate basics, including RE Excel financial modeling and qualitative asset valuation. The Institute is open to all underclassmen.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">07</span>
-        <span class="index__name">Investments</span>
-        <p class="index__desc">The Investments Committee builds on the Institute curriculum with a highly technical, recruiting-focused experience. Members dive into quantitative asset valuation, REITs, capital structures, and case-based financial modeling. The committee leads deal presentations, investment memos, and mock technical interviews to prepare members for roles in real estate finance fields. Students who completed the Institute program in the previous year are preferred.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="index__row" href="{{root}}membership/#committees">
-        <span class="index__num">08</span>
-        <span class="index__name">Infrastructure</span>
-        <p class="index__desc">The Infrastructure Committee focuses on infrastructure investing across transportation, energy, digital, and social assets. The committee hosts leading infrastructure firms and speakers, and runs case studies covering deal sourcing, underwriting, and capital markets trends in the sector.</p>
-        <svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <div class="switcher" data-reveal>
+      <div role="tablist" aria-label="Committees" style="display: contents">
+      <div class="switcher__item">
+        <button class="switcher__tab is-on" type="button" role="tab" id="tab-treks" aria-controls="committee-treks" aria-selected="true">
+          <span class="switcher__num">01</span>
+          <span class="switcher__name">Treks</span>
+        </button>
+        <article class="switcher__panel is-on" id="committee-treks" role="tabpanel" aria-labelledby="tab-treks">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/06.jpg" alt="Members in hard hats and safety vests touring a construction site." loading="lazy"></div>
+          <p class="eyebrow">01 &middot; Committee</p>
+          <h3>Treks</h3>
+          <p>The Treks Committee organizes small group trips to top real estate firms and property sites throughout the year. Some recent Treks highlights have included NYC, Los Angeles, Houston, Boston, Chicago, Dubai, and London.</p>
+          <a class="link" href="{{root}}new-page/">Explore treks</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-speakers" aria-controls="committee-speakers" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">02</span>
+          <span class="switcher__name">Speakers</span>
+        </button>
+        <article class="switcher__panel" id="committee-speakers" role="tabpanel" aria-labelledby="tab-speakers">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/03.jpg" alt="A guest speaker beside a window overlooking the city skyline." loading="lazy"></div>
+          <p class="eyebrow">02 &middot; Committee</p>
+          <h3>Speakers</h3>
+          <p>The Speakers Committee is responsible for organizing events with preeminent real estate executives where they offer insight into their company and submarket. Previous speaker events include Charles Kushner (Founder of Kushner Companies), John Carrafiell (Co-CEO of BGO), and Jim Garman (Global Head of Real Estate at Goldman Sachs), among others.</p>
+          <a class="link" href="{{root}}new-page-1/">Explore speakers</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-careers" aria-controls="committee-careers" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">03</span>
+          <span class="switcher__name">Careers</span>
+        </button>
+        <article class="switcher__panel" id="committee-careers" role="tabpanel" aria-labelledby="tab-careers">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/05.jpg" alt="Members seated around a conference table listening to a presentation." loading="lazy"></div>
+          <p class="eyebrow">03 &middot; Committee</p>
+          <h3>Careers</h3>
+          <p>The Careers Committee is responsible for liaising with firms interested in recruiting Wharton students and increasing their presence on campus. Duties include facilitating job opportunity communications, organizing info sessions, and maintaining relations with real estate companies.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-communications" aria-controls="committee-communications" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">04</span>
+          <span class="switcher__name">Communications</span>
+        </button>
+        <article class="switcher__panel" id="committee-communications" role="tabpanel" aria-labelledby="tab-communications">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/01.jpg" alt="A speaker presenting to a full lecture hall of students." loading="lazy"></div>
+          <p class="eyebrow">04 &middot; Committee</p>
+          <h3>Communications</h3>
+          <p>The Communications Committee is responsible for all marketing and listserv communication, as well as all club media including social media and the WUREC website.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-internal" aria-controls="committee-internal" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">05</span>
+          <span class="switcher__name">Internal</span>
+        </button>
+        <article class="switcher__panel" id="committee-internal" role="tabpanel" aria-labelledby="tab-internal">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/07.jpg" alt="The group in a glass-walled space with the skyline behind them." loading="lazy"></div>
+          <p class="eyebrow">05 &middot; Committee</p>
+          <h3>Internal</h3>
+          <p>The Internal Committee organizes all club social events and the WUREC recruiting process. Internal manages all membership-related activities, including the GBM program, and serves as a liaison to the Zell/Lurie Center.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-institute" aria-controls="committee-institute" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">06</span>
+          <span class="switcher__name">The Institute</span>
+        </button>
+        <article class="switcher__panel" id="committee-institute" role="tabpanel" aria-labelledby="tab-institute">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/02.jpg" alt="A presentation in front of two wall screens in a firm's boardroom." loading="lazy"></div>
+          <p class="eyebrow">06 &middot; Committee</p>
+          <h3>The Institute</h3>
+          <p>The Institute Committee focuses on teaching a holistic curriculum to all WUREC members that covers a broad range of real estate basics, including RE Excel financial modeling and qualitative asset valuation. The Institute is open to all underclassmen.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-investments" aria-controls="committee-investments" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">07</span>
+          <span class="switcher__name">Investments</span>
+        </button>
+        <article class="switcher__panel" id="committee-investments" role="tabpanel" aria-labelledby="tab-investments">
+          <div class="switcher__media"><img src="{{root}}assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline." loading="lazy"></div>
+          <p class="eyebrow">07 &middot; Committee</p>
+          <h3>Investments</h3>
+          <p>The Investments Committee builds on the Institute curriculum with a highly technical, recruiting-focused experience. Members dive into quantitative asset valuation, REITs, capital structures, and case-based financial modeling. The committee leads deal presentations, investment memos, and mock technical interviews to prepare members for roles in real estate finance fields. Students who completed the Institute program in the previous year are preferred.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      <div class="switcher__item">
+        <button class="switcher__tab" type="button" role="tab" id="tab-infrastructure" aria-controls="committee-infrastructure" aria-selected="false" tabindex="-1">
+          <span class="switcher__num">08</span>
+          <span class="switcher__name">Infrastructure</span>
+        </button>
+        <article class="switcher__panel" id="committee-infrastructure" role="tabpanel" aria-labelledby="tab-infrastructure">
+          <div class="switcher__media"><img src="{{root}}assets/img/background.jpeg" alt="The Philadelphia skyline beyond the Wharton campus." loading="lazy"></div>
+          <p class="eyebrow">08 &middot; Committee</p>
+          <h3>Infrastructure</h3>
+          <p>The Infrastructure Committee focuses on infrastructure investing across transportation, energy, digital, and social assets. The committee hosts leading infrastructure firms and speakers, and runs case studies covering deal sourcing, underwriting, and capital markets trends in the sector.</p>
+          <a class="link" href="{{root}}membership/#committees">Learn more</a>
+        </article>
+      </div>
+      </div>
     </div>
   </div>
 </section>
