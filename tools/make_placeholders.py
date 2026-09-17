@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Generate the original placeholder artwork (SVG) used until real photos are
 dropped into assets/img/. Re-run with:  python3 tools/make_placeholders.py
+
+Colours come from the brand palette (see :root in assets/css/site.css):
+blues #1159ad #4179bb #779dc9 #afc2d8 and greys #000000 #474747 #989898 #e7e7e7 #eeeeee.
 """
 import pathlib
 import random
@@ -47,16 +50,16 @@ W, H = 1600, 900
 hero = (
     f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice">'
     '<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'
-    '<stop offset="0" stop-color="#123c8f"/><stop offset="0.6" stop-color="#062a72"/><stop offset="1" stop-color="#011f5b"/>'
+    '<stop offset="0" stop-color="#779dc9"/><stop offset="0.6" stop-color="#4179bb"/><stop offset="1" stop-color="#1159ad"/>'
     '</linearGradient><radialGradient id="glow" cx="0.5" cy="1" r="0.8">'
-    '<stop offset="0" stop-color="#3f6fd0" stop-opacity="0.55"/><stop offset="1" stop-color="#011f5b" stop-opacity="0"/>'
+    '<stop offset="0" stop-color="#afc2d8" stop-opacity="0.55"/><stop offset="1" stop-color="#1159ad" stop-opacity="0"/>'
     '</radialGradient></defs>'
     f'<rect width="{W}" height="{H}" fill="url(#sky)"/>'
     f'<rect width="{W}" height="{H}" fill="url(#glow)"/>'
     + skyline(W, H, 7, [
-        ("#0b2f78", 0.85, 140, 360, 40, 110),
-        ("#062458", 1.0, 180, 480, 50, 140),
-        ("#02163f", 1.0, 220, 620, 60, 170),
+        ("#1159ad", 0.85, 140, 360, 40, 110),
+        ("#474747", 1.0, 180, 480, 50, 140),
+        ("#000000", 1.0, 220, 620, 60, 170),
     ])
     + "</svg>"
 )
@@ -91,24 +94,24 @@ ICON_TROPHY = ('<g transform="translate(450 250)" fill="none" stroke="#ffffff" s
 ICON_CAMERA = ('<g transform="translate(450 250)" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">'
                '<path d="M-110 -40h50l20 -30h80l20 30h50v130h-220z"/><circle cx="0" cy="25" r="38"/></g>')
 
-tile("placeholder-treks.svg", 11, "#1a3f8f", "#011f5b", ICON_TREK)
-tile("placeholder-speakers.svg", 23, "#8a1414", "#4a0a0a", ICON_SPEAKER)
-tile("placeholder-casecomps.svg", 37, "#2b4a7a", "#0e1f3f", ICON_TROPHY)
-tile("placeholder-photo.svg", 51, "#5b6b85", "#2b3446", ICON_CAMERA)
-tile("placeholder-nyc.svg", 63, "#274a93", "#0b1d4c", "")
-tile("placeholder-philly.svg", 77, "#6b2222", "#2e0d0d", "")
-tile("placeholder-chicago.svg", 89, "#3a5a8a", "#122544", "")
+tile("placeholder-treks.svg", 11, "#4179bb", "#1159ad", ICON_TREK)
+tile("placeholder-speakers.svg", 23, "#474747", "#000000", ICON_SPEAKER)
+tile("placeholder-casecomps.svg", 37, "#779dc9", "#4179bb", ICON_TROPHY)
+tile("placeholder-photo.svg", 51, "#989898", "#474747", ICON_CAMERA)
+tile("placeholder-nyc.svg", 63, "#4179bb", "#1159ad", "")
+tile("placeholder-philly.svg", 77, "#afc2d8", "#779dc9", "")
+tile("placeholder-chicago.svg", 89, "#989898", "#474747", "")
 
 # Headshot placeholder ---------------------------------------------------------
 write("headshot.svg",
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">'
-      '<rect width="200" height="200" fill="#e9ecf1"/>'
-      '<circle cx="100" cy="78" r="36" fill="#b8c0ce"/>'
-      '<path d="M30 200c0-45 31-72 70-72s70 27 70 72z" fill="#b8c0ce"/></svg>')
+      '<rect width="200" height="200" fill="#eeeeee"/>'
+      '<circle cx="100" cy="78" r="36" fill="#afc2d8"/>'
+      '<path d="M30 200c0-45 31-72 70-72s70 27 70 72z" fill="#afc2d8"/></svg>')
 
 # Favicon ---------------------------------------------------------------------
 write("favicon.svg",
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">'
-      '<rect width="64" height="64" rx="10" fill="#011f5b"/>'
+      '<rect width="64" height="64" rx="10" fill="#1159ad"/>'
       '<text x="32" y="43" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" '
       'font-weight="700" font-size="34" fill="#ffffff">W</text></svg>')
