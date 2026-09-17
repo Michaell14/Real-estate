@@ -6,140 +6,180 @@
       "name": "Josh Kwon",
       "school": "Wharton",
       "class": "2028",
-      "email": "joshkwon@wharton.upenn.edu"
+      "email": "joshkwon@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Co-Presidents",
       "name": "Griffin Albaugh",
       "school": "Wharton",
       "class": "2027",
-      "email": "galbaugh@wharton.upenn.edu"
+      "email": "galbaugh@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Treks",
       "name": "Evie Rosenfeld",
       "school": "Wharton",
       "class": "2029",
-      "email": "evierose@wharton.upenn.edu"
+      "email": "evierose@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Treks",
       "name": "Frank de la Terga",
       "school": "Wharton",
       "class": "2028",
-      "email": "fdlt@wharton.upenn.edu"
+      "email": "fdlt@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Careers",
       "name": "Jayden Freeman",
       "school": "Wharton",
       "class": "2029",
-      "email": "freeman0@wharton.upenn.edu"
+      "email": "freeman0@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Careers",
       "name": "Jasmine Nunez",
       "school": "Wharton",
       "class": "2028",
-      "email": "jnunez21@wharton.upenn.edu"
+      "email": "jnunez21@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Speakers",
       "name": "Samuli Sistonen",
       "school": "Wharton",
       "class": "2027",
-      "email": "sistonen@wharton.upenn.edu"
+      "email": "sistonen@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Speakers",
       "name": "Alejandra Sanchez",
       "school": "Wharton",
       "class": "2029",
-      "email": "sanchez0@wharton.upenn.edu"
+      "email": "sanchez0@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Communications",
       "name": "Reed Sullivan",
       "school": "Wharton",
       "class": "2027",
-      "email": "reedsull@wharton.upenn.edu"
+      "email": "reedsull@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Communications",
       "name": "Kinga Gul",
       "school": "Wharton",
       "class": "2029",
-      "email": "kgul25@wharton.upenn.edu"
+      "email": "kgul25@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Internal",
       "name": "Leo Tapia",
       "school": "Wharton",
       "class": "2028",
-      "email": "leotapia@wharton.upenn.edu"
+      "email": "leotapia@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Internal",
       "name": "Peyton Lange",
       "school": "College",
       "class": "2029",
-      "email": "peyton1@sas.upenn.edu"
+      "email": "peyton1@sas.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Treasurers",
       "name": "Andrei Melnikov",
       "school": "College",
       "class": "2028",
-      "email": "melnikov@sas.upenn.edu"
+      "email": "melnikov@sas.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Treasurers",
       "name": "Ali Shakerin",
       "school": "Wharton",
       "class": "2029",
-      "email": "alishakr@wharton.upenn.edu"
+      "email": "alishakr@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "The Institute",
       "name": "Roman Vandemark",
       "school": "Wharton",
       "class": "2027",
-      "email": "romanv@wharton.upenn.edu"
+      "email": "romanv@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "The Institute",
       "name": "Robert Melsom",
       "school": "Wharton",
       "class": "2027",
-      "email": "rmelsom@wharton.upenn.edu"
+      "email": "rmelsom@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Investments",
       "name": "Marilyn Shi",
       "school": "Wharton",
       "class": "2027",
-      "email": "marishi@wharton.upenn.edu"
+      "email": "marishi@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Investments",
       "name": "Wesley Chen",
       "school": "Wharton",
       "class": "2028",
-      "email": "wesleych@wharton.upenn.edu"
+      "email": "wesleych@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Infrastructure",
       "name": "Marcus Meshechok",
       "school": "College",
       "class": "2027",
-      "email": "marcusme@sas.upenn.edu"
+      "email": "marcusme@sas.upenn.edu",
+      "bio": "",
+      "photo": ""
     },
     {
       "committee": "Infrastructure",
       "name": "Veronika Naumova",
       "school": "Wharton",
       "class": "2028",
-      "email": "nikanaum@wharton.upenn.edu"
+      "email": "nikanaum@wharton.upenn.edu",
+      "bio": "",
+      "photo": ""
     }
   ]
 }
