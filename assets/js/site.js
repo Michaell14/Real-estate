@@ -105,6 +105,58 @@
     });
   });
 
+  /* Executive board: clicking a member's photo copies their email address instead of
+     opening a mail client. Without JavaScript, or if the clipboard is unavailable, the
+     mailto: link behaves as a normal email link. */
+  var announcer = null;
+  function announce(text) {
+    if (!announcer) {
+      announcer = document.createElement('div');
+      announcer.className = 'visually-hidden';
+      announcer.setAttribute('aria-live', 'polite');
+      document.body.appendChild(announcer);
+    }
+    announcer.textContent = '';
+    setTimeout(function () { announcer.textContent = text; }, 50);
+  }
+  function copyText(text, done) {
+    function legacy() {
+      var box = document.createElement('textarea');
+      box.value = text;
+      box.setAttribute('readonly', '');
+      box.style.position = 'fixed';
+      box.style.top = '-1000px';
+      document.body.appendChild(box);
+      box.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+      document.body.removeChild(box);
+      done(ok);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, legacy);
+    } else {
+      legacy();
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.member__photo-link[href^="mailto:"]'), function (link) {
+    var email = link.getAttribute('href').replace(/^mailto:/i, '').split('?')[0];
+    var heading = link.parentElement && link.parentElement.querySelector('h3');
+    var name = heading ? heading.textContent.trim() : '';
+    var timer = null;
+    link.setAttribute('aria-label', name ? 'Copy ' + name + '\u2019s email address' : 'Copy email address');
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      copyText(email, function (ok) {
+        if (!ok) { window.location.href = link.href; return; }
+        link.classList.add('is-copied');
+        announce('Copied ' + email + ' to the clipboard');
+        clearTimeout(timer);
+        timer = setTimeout(function () { link.classList.remove('is-copied'); }, 1800);
+      });
+    });
+  });
+
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
     el.textContent = String(new Date().getFullYear());
   });
