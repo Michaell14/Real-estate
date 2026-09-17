@@ -374,6 +374,30 @@ main { animation: none; }
 .feature p { font-size: .95rem; }
 .feature .link { margin-top: .6rem; }
 
+/* Trek ledger (text-only list of past treks, grouped by city) ------------- */
+.ledger { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 32px 64px; padding: 48px 0; border-top: 1px solid var(--hairline); align-items: start; }
+.ledger:last-child { border-bottom: 1px solid var(--hairline); }
+.ledger__city { display: flex; flex-direction: column; gap: 10px; }
+.ledger__city h3 { margin: 0; font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 300; }
+.ledger__count { font-weight: 400; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--caption); }
+.ledger__rows { display: flex; flex-direction: column; }
+.ledger__row { display: grid; grid-template-columns: minmax(0, 1fr) 32px; gap: 24px; align-items: center; padding: 24px 0; border-top: 1px solid var(--hairline); color: var(--text); }
+.ledger__row:first-child { border-top: 0; padding-top: 0; }
+.ledger__title { margin: 0 0 8px; font-size: 1.5rem; font-weight: 400; line-height: 1.15; transition: color .4s; }
+.ledger__desc { margin: 0; font-size: .95rem; line-height: 1.7; max-width: 640px; }
+.ledger__meta { display: inline-block; margin-top: 12px; font-weight: 400; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--caption); }
+.ledger__arrow { width: 22px; height: 22px; color: var(--ink); transition: transform .5s var(--ease); }
+a.ledger__row:hover { color: var(--text); }
+a.ledger__row:hover .ledger__title { color: var(--caption); }
+a.ledger__row:hover .ledger__arrow { transform: translateX(6px); }
+
+/* Cities (large-type list) ------------------------------------------------- */
+.cities { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--hairline); }
+.cities li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 32px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+.cities__num { font-weight: 400; font-size: 11px; letter-spacing: .3em; color: var(--caption); }
+.cities__name { font-family: var(--font-display); font-weight: 300; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; color: var(--ink); display: inline-block; transition: color .4s, transform .6s var(--ease); }
+.cities li:hover .cities__name { color: var(--caption); transform: translateX(10px); }
+
 /* Committees and lists --------------------------------------------------- */
 .committees { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.6rem 3rem; }
 .committee { border-top: 1px solid var(--hairline-strong); padding-top: 1.4rem; }
@@ -492,6 +516,7 @@ main { animation: none; }
   .page-hero__media { min-height: 38vh; min-height: 38svh; }
   .hero-split__panel, .page-hero__panel { padding: 48px var(--gutter) 64px; }
   .split { grid-template-columns: 1fr; gap: 32px; }
+  .ledger { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
   .grid--2, .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .feature { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
   .feature:nth-child(even) .feature__img { order: 0; }
