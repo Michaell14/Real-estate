@@ -38,7 +38,6 @@ SITE_NAME = "WUREC"
 NAV = [
     ("Membership", "membership"),
     ("Events", None, [
-        ("Events", "featured-events"),
         ("Treks", "treks"),
         ("Speakers", "new-page-1"),
         ("Case Comps", "new-page-2"),

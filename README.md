@@ -12,7 +12,6 @@ The original URL slugs are preserved so old links keep working:
 | --- | --- | --- |
 | Home | `/` | WUREC |
 | Membership | `/membership/` | Membership — WUREC |
-| Events | `/featured-events/` | Events — WUREC |
 | Treks (featured) | `/new-page/` | Treks (Featured) — WUREC |
 | Treks (all) | `/treks/` | Treks — WUREC |
 | Speakers | `/new-page-1/` | Speakers (Linked) — WUREC |
