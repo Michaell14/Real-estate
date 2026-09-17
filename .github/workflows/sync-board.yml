@@ -1,0 +1,71 @@
+# Refresh the Executive Board page from the club's Google Sheet and Drive folder.
+#
+# Runs every morning and whenever someone presses "Run workflow" on the Actions
+# tab. It pulls the roster and headshots (tools/sync_board.py), rebuilds the
+# site (tools/build.py) and commits the result to the branch it ran on; Vercel
+# then deploys it. See "Updating the Executive Board" in the README for the
+# three repository secrets it needs. Until they are set it exits quietly.
+name: Sync executive board
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # 09:17 UTC daily (~5am Philadelphia)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-board
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      BOARD_SHEET_ID: ${{ secrets.BOARD_SHEET_ID }}
+      BOARD_DRIVE_FOLDER_ID: ${{ secrets.BOARD_DRIVE_FOLDER_ID }}
+    steps:
+      - name: Check the secrets are set
+        id: config
+        run: |
+          if [ -z "$GOOGLE_API_KEY" ] || [ -z "$BOARD_SHEET_ID" ]; then
+            echo "::notice::GOOGLE_API_KEY / BOARD_SHEET_ID secrets are not set; nothing to sync (see README)."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.config.outputs.configured == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.config.outputs.configured == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        if: steps.config.outputs.configured == 'true'
+        run: python3 -m pip install --quiet pillow
+
+      - name: Pull the roster and headshots
+        if: steps.config.outputs.configured == 'true'
+        run: python3 tools/sync_board.py
+
+      - name: Build the site
+        if: steps.config.outputs.configured == 'true'
+        run: python3 tools/build.py
+
+      - name: Commit and push
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync the executive board from Google Sheets"
+          git push

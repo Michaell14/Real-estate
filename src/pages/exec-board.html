@@ -1,31 +1,31 @@
 ---
 title: Executive Board
 slug: exec-board
-description: Meet the 2026–2027 WUREC Executive Board: the Penn students who lead the Wharton Undergraduate Real Estate Club and its eight committees.
+description: Meet the {{season}} WUREC Executive Board: the Penn students who lead the Wharton Undergraduate Real Estate Club and its eight committees.
 hero: assets/img/carousel/08.jpg
 ---
 <!--
-  2026/2027 board roster, grouped by committee (two members per group).
+  The board roster is NOT written here. It is rendered by tools/build.py from
+  src/data/board.json, which tools/sync_board.py refreshes from the club's
+  Google Sheet (see "Updating the Executive Board" in the README). The board
+  placeholder below becomes one .board-group section per committee, in sheet
+  order, and the season placeholder is the "Season" value from the sheet's
+  Settings tab.
 
-  To update a member, edit the name, the "meta" line (school and class year)
-  and the two places the email appears: the mailto: href and the
-  .member__email overlay text (shown when the photo is hovered / focused).
-  Clicking a photo copies the address to the clipboard (assets/js/site.js);
-  without JavaScript the mailto: link opens the mail client instead.
+  Headshots live in exec-board/pictures/, one 512x512 WebP per member named
+  after them (e.g. pictures/Josh Kwon.webp). The sync script makes them from
+  the photos in the shared Google Drive folder; tools/make_headshots.py does
+  the same for a local folder of portraits. A member with no headshot gets
+  assets/img/headshot-placeholder.svg.
 
-  Headshots live in exec-board/pictures/, one file per member named after them
-  (e.g. pictures/Josh Kwon.webp). To swap one, replace that file, or point the
-  member's <img src> at a new name -- spaces must be escaped as %20. Each file
-  is a 512x512 WebP made by tools/make_headshots.py, which trims the thin blue
-  frame the source portraits carry and centre-crops them to a square. The
-  full-resolution PNGs are in git history at commit 0ef33a2.
-
-  Phone numbers are intentionally not published.
+  Clicking a photo copies the member's email to the clipboard
+  (assets/js/site.js); without JavaScript the mailto: link opens the mail
+  client instead. Phone numbers are intentionally not published.
 -->
 <section class="page-hero">
   <div class="page-hero__media"><img class="kb" fetchpriority="high" src="{{root}}assets/img/carousel/08.jpg" alt="Members at floor-to-ceiling windows overlooking a downtown skyline."></div>
   <div class="page-hero__panel">
-    <p class="eyebrow" data-reveal>2026&ndash;2027</p>
+    <p class="eyebrow" data-reveal>{{season}}</p>
     <h1 data-reveal>Executive Board</h1>
   </div>
 </section>
@@ -33,237 +33,7 @@ hero: assets/img/carousel/08.jpg
 <section class="section">
   <div class="wrap">
     <div class="board">
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Co-Presidents</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:joshkwon@wharton.upenn.edu" aria-label="Email Josh Kwon">
-            <img class="member__photo" src="pictures/Josh%20Kwon.webp" alt="Josh Kwon">
-            <span class="member__email" aria-hidden="true">joshkwon@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Josh Kwon</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:galbaugh@wharton.upenn.edu" aria-label="Email Griffin Albaugh">
-            <img class="member__photo" src="pictures/Griffin%20Albaugh.webp" alt="Griffin Albaugh">
-            <span class="member__email" aria-hidden="true">galbaugh@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Griffin Albaugh</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Treks</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:evierose@wharton.upenn.edu" aria-label="Email Evie Rosenfeld">
-            <img class="member__photo" src="pictures/Evie%20Rosenfeld.webp" alt="Evie Rosenfeld">
-            <span class="member__email" aria-hidden="true">evierose@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Evie Rosenfeld</h3>
-          <p class="meta">Wharton &rsquo;29</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:fdlt@wharton.upenn.edu" aria-label="Email Frank de la Terga">
-            <img class="member__photo" src="pictures/Frank%20de%20la%20Terga.webp" alt="Frank de la Terga">
-            <span class="member__email" aria-hidden="true">fdlt@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Frank de la Terga</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Careers</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:freeman0@wharton.upenn.edu" aria-label="Email Jayden Freeman">
-            <img class="member__photo" src="pictures/Jayden%20Freeman.webp" alt="Jayden Freeman">
-            <span class="member__email" aria-hidden="true">freeman0@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Jayden Freeman</h3>
-          <p class="meta">Wharton &rsquo;29</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:jnunez21@wharton.upenn.edu" aria-label="Email Jasmine Nunez">
-            <img class="member__photo" src="pictures/Jasmine%20Nunez.webp" alt="Jasmine Nunez">
-            <span class="member__email" aria-hidden="true">jnunez21@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Jasmine Nunez</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Speakers</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:sistonen@wharton.upenn.edu" aria-label="Email Samuli Sistonen">
-            <img class="member__photo" src="pictures/Samuli%20Sistone.webp" alt="Samuli Sistonen">
-            <span class="member__email" aria-hidden="true">sistonen@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Samuli Sistonen</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:sanchez0@wharton.upenn.edu" aria-label="Email Alejandra Sanchez">
-            <img class="member__photo" src="pictures/Alejandra%20Sanchez.webp" alt="Alejandra Sanchez">
-            <span class="member__email" aria-hidden="true">sanchez0@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Alejandra Sanchez</h3>
-          <p class="meta">Wharton &rsquo;29</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Communications</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:reedsull@wharton.upenn.edu" aria-label="Email Reed Sullivan">
-            <img class="member__photo" src="pictures/Reed%20Sullivan.webp" alt="Reed Sullivan">
-            <span class="member__email" aria-hidden="true">reedsull@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Reed Sullivan</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:kgul25@wharton.upenn.edu" aria-label="Email Kinga Gul">
-            <img class="member__photo" src="pictures/Kinga%20Gul.webp" alt="Kinga Gul">
-            <span class="member__email" aria-hidden="true">kgul25@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Kinga Gul</h3>
-          <p class="meta">Wharton &rsquo;29</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Internal</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:leotapia@wharton.upenn.edu" aria-label="Email Leo Tapia">
-            <img class="member__photo" src="pictures/Leo%20Tapia.webp" alt="Leo Tapia">
-            <span class="member__email" aria-hidden="true">leotapia@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Leo Tapia</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:peyton1@sas.upenn.edu" aria-label="Email Peyton Lange">
-            <img class="member__photo" src="pictures/Peyton%20Lange.webp" alt="Peyton Lange">
-            <span class="member__email" aria-hidden="true">peyton1@<br>sas.upenn.edu</span>
-          </a>
-          <h3>Peyton Lange</h3>
-          <p class="meta">College &rsquo;29</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Treasurers</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:melnikov@sas.upenn.edu" aria-label="Email Andrei Melnikov">
-            <img class="member__photo" src="pictures/Andrei%20Melnikov.webp" alt="Andrei Melnikov">
-            <span class="member__email" aria-hidden="true">melnikov@<br>sas.upenn.edu</span>
-          </a>
-          <h3>Andrei Melnikov</h3>
-          <p class="meta">College &rsquo;28</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:alishakr@wharton.upenn.edu" aria-label="Email Ali Shakerin">
-            <img class="member__photo" src="pictures/Ali%20Shakerin.webp" alt="Ali Shakerin">
-            <span class="member__email" aria-hidden="true">alishakr@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Ali Shakerin</h3>
-          <p class="meta">Wharton &rsquo;29</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">The Institute</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:romanv@wharton.upenn.edu" aria-label="Email Roman Vandemark">
-            <img class="member__photo" src="pictures/Roman%20Vandemark.webp" alt="Roman Vandemark">
-            <span class="member__email" aria-hidden="true">romanv@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Roman Vandemark</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:rmelsom@wharton.upenn.edu" aria-label="Email Robert Melsom">
-            <img class="member__photo" src="pictures/Robert%20Melsom.webp" alt="Robert Melsom">
-            <span class="member__email" aria-hidden="true">rmelsom@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Robert Melsom</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Investments</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:marishi@wharton.upenn.edu" aria-label="Email Marilyn Shi">
-            <img class="member__photo" src="pictures/Marilyn%20Shi.webp" alt="Marilyn Shi">
-            <span class="member__email" aria-hidden="true">marishi@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Marilyn Shi</h3>
-          <p class="meta">Wharton &rsquo;27</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:wesleych@wharton.upenn.edu" aria-label="Email Wesley Chen">
-            <img class="member__photo" src="pictures/Wesley%20Chen.webp" alt="Wesley Chen">
-            <span class="member__email" aria-hidden="true">wesleych@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Wesley Chen</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="board-group" data-reveal>
-      <h2 class="board-group__title">Infrastructure</h2>
-      <div class="board-group__members">
-        <div class="member">
-          <a class="member__photo-link" href="mailto:marcusme@sas.upenn.edu" aria-label="Email Marcus Meshechok">
-            <img class="member__photo" src="pictures/Marcus%20Meshechok.webp" alt="Marcus Meshechok">
-            <span class="member__email" aria-hidden="true">marcusme@<br>sas.upenn.edu</span>
-          </a>
-          <h3>Marcus Meshechok</h3>
-          <p class="meta">College &rsquo;27</p>
-        </div>
-
-        <div class="member">
-          <a class="member__photo-link" href="mailto:nikanaum@wharton.upenn.edu" aria-label="Email Veronika Naumova">
-            <img class="member__photo" src="pictures/Veronika%20Naumova.webp" alt="Veronika Naumova">
-            <span class="member__email" aria-hidden="true">nikanaum@<br>wharton.upenn.edu</span>
-          </a>
-          <h3>Veronika Naumova</h3>
-          <p class="meta">Wharton &rsquo;28</p>
-        </div>
-      </div>
-    </section>
-
+{{board}}
     </div>
   </div>
 </section>

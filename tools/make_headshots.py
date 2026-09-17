@@ -11,6 +11,9 @@ left and right), centre-crops to a square, resizes to SIZE x SIZE and writes
 
     python3 -m pip install pillow
 
+tools/sync_board.py uses the same crop (``headshot()``) on the photos in the
+club's Google Drive folder, so this script is only needed for local portraits.
+
 The original PNGs are not kept in the working tree; they are in git history
 (commit 0ef33a2, exec-board/pictures/*.png). To re-run on them:
 
@@ -68,8 +71,12 @@ def frame_width(img, side):
     return n
 
 
-def process(src, size, quality, dry_run):
-    img = Image.open(src).convert("RGB")
+def headshot(source, size=512):
+    """Open a portrait (path or file object), trim its frame and centre-crop it
+    to a size x size square. Returns (image, note) where note describes the crop."""
+    img = Image.open(source)
+    img.load()
+    img = img.convert("RGB")
     w, h = img.size
     frame = {side: frame_width(img, side) for side in ("left", "right", "top", "bottom")}
     margin = max(2, round(w * SAFETY_MARGIN))
@@ -79,12 +86,21 @@ def process(src, size, quality, dry_run):
     side = min(cw, ch)
     left, top = (cw - side) // 2, (ch - side) // 2
     img = img.crop((left, top, left + side, top + side)).resize((size, size), Image.LANCZOS)
+    frame_note = ", ".join(f"{s} {n}px" for s, n in frame.items() if n) or "none"
+    return img, f"{w}x{h}, frame: {frame_note}, square {side}px"
+
+
+def save_webp(img, out, quality=85):
+    out.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out, "WEBP", quality=quality, method=6)
+
+
+def process(src, size, quality, dry_run):
+    img, note = headshot(src, size)
     out = OUT / (src.stem + ".webp")
     if not dry_run:
-        img.save(out, "WEBP", quality=quality, method=6)
-    frame_note = ", ".join(f"{s} {n}px" for s, n in frame.items() if n) or "none"
-    print(f"{'would write' if dry_run else 'wrote'} {out.relative_to(ROOT)}  "
-          f"({w}x{h}, frame: {frame_note}, square {side}px)")
+        save_webp(img, out, quality)
+    print(f"{'would write' if dry_run else 'wrote'} {out.relative_to(ROOT)}  ({note})")
 
 
 def main():
