@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://wurec.info/case-competitions/</loc>
+    <loc>https://wurec.org/case-competitions/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/case-competitions.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/case-competitions.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/exec-board/</loc>
+    <loc>https://wurec.org/exec-board/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/exec-board.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/exec-board.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/</loc>
+    <loc>https://wurec.org/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/home.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/home.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/membership/</loc>
+    <loc>https://wurec.org/membership/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/membership.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/membership.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/speakers/</loc>
+    <loc>https://wurec.org/speakers/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/speakers.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/speakers.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/treks/highlights/</loc>
+    <loc>https://wurec.org/treks/highlights/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/treks-highlights.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/treks-highlights.jpg</image:loc>
     </image:image>
   </url>
   <url>
-    <loc>https://wurec.info/treks/</loc>
+    <loc>https://wurec.org/treks/</loc>
     <lastmod>2026-09-17</lastmod>
     <image:image>
-      <image:loc>https://wurec.info/assets/img/og/treks.jpg</image:loc>
+      <image:loc>https://wurec.org/assets/img/og/treks.jpg</image:loc>
     </image:image>
   </url>
 </urlset>

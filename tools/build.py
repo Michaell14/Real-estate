@@ -48,7 +48,7 @@ PAGES_DIR = SRC / "pages"
 
 SITE_NAME = "WUREC"
 SITE_LONG_NAME = "Wharton Undergraduate Real Estate Club"
-SITE_URL = "https://wurec.info"            # no trailing slash
+SITE_URL = "https://wurec.org"            # no trailing slash
 DEFAULT_IMAGE = "assets/img/og/home.jpg"   # link-preview image for pages without a hero
 TWITTER_HANDLE = "@WUREC"
 SOCIAL = [

@@ -58,7 +58,7 @@ Then open <http://localhost:8000/>.
 
 **GitHub Pages:** Settings → Pages → *Deploy from a branch*, pick this branch
 and the `/ (root)` folder. The `.nojekyll` file is already included. To use
-the club domain, add a `CNAME` file containing `wurec.info` and point the
+the club domain, add a `CNAME` file containing `wurec.org` and point the
 domain's DNS at GitHub Pages.
 
 Any other static host (Netlify, Vercel, Cloudflare Pages) can serve the
@@ -68,7 +68,7 @@ repository root as-is with no build step.
 
 `tools/build.py` writes everything search engines and link previews need. Set
 `SITE_URL` at the top of it to the address the site is served from (it is
-`https://wurec.info` now) and rebuild before deploying.
+`https://wurec.org`) and rebuild before deploying.
 
 - Every page has a canonical link, a description, Open Graph and Twitter card
   tags, a preloaded hero image and JSON-LD structured data (Organization,
@@ -83,7 +83,7 @@ repository root as-is with no build step.
   Re-run it after changing a page's `hero:` photo.
 
 After deploying, add the site to Google Search Console and Bing Webmaster
-Tools and submit `https://wurec.info/sitemap.xml`; both then report what is
+Tools and submit `https://wurec.org/sitemap.xml`; both then report what is
 indexed and flag any errors.
 
 ## Things to fill in
