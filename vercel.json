@@ -1,0 +1,227 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/new-page",
+      "destination": "/treks/highlights/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page/",
+      "destination": "/treks/highlights/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-1",
+      "destination": "/speakers/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-1/",
+      "destination": "/speakers/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-2",
+      "destination": "/case-competitions/",
+      "permanent": true
+    },
+    {
+      "source": "/new-page-2/",
+      "destination": "/case-competitions/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-events",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/featured-events/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nyc102017",
+      "destination": "/treks/",
+      "permanent": true
+    },
+    {
+      "source": "/nyc102017/",
+      "destination": "/treks/",
+      "permanent": true
+    },
+    {
+      "source": "/nyc112021",
+      "destination": "/treks/",
+      "permanent": true
+    },
+    {
+      "source": "/nyc112021/",
+      "destination": "/treks/",
+      "permanent": true
+    },
+    {
+      "source": "/calendar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/calendar/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/membership/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/",
+      "destination": "/membership/",
+      "permanent": true
+    },
+    {
+      "source": "/media",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/media/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/blockchain-real-estate",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/blockchain-real-estate/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/global-debt-series",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/global-debt-series/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/golf-real-estate",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/golf-real-estate/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/middle-housing",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/middle-housing/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rediscovering-retail",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rediscovering-retail/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/b83fe5ea-706b-4643-a4f3-f117a9ba99b2",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/b83fe5ea-706b-4643-a4f3-f117a9ba99b2/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/src/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/carousel/:path*",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/exec-board/pictures/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
+  ]
+}
