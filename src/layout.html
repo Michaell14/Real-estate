@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
-<meta property="og:title" content="{{title}}">
-<meta property="og:description" content="{{description}}">
-<meta property="og:type" content="website">
+{{seo}}
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="{{root}}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{root}}assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{root}}assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{root}}assets/css/site.css">
 <script>document.documentElement.classList.add('js');</script>
+{{jsonld}}
 </head>
 <body class="{{body_class}}">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -41,8 +42,8 @@
       <span class="footer-label">Club</span>
       <a href="{{root}}membership/">Membership</a>
       <a href="{{root}}treks/">Treks</a>
-      <a href="{{root}}new-page-1/">Speakers</a>
-      <a href="{{root}}new-page-2/">Case Comps</a>
+      <a href="{{root}}speakers/">Speakers</a>
+      <a href="{{root}}case-competitions/">Case Comps</a>
       <a href="{{root}}exec-board/">Executive Board</a>
     </div>
     <div class="footer-col">

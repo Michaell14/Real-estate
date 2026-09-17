@@ -9,3 +9,6 @@ __pycache__/
 
 # Local verification output
 .screenshots/
+
+# Fonts downloaded by tools/make_brand.py
+tools/.fonts/
