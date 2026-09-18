@@ -34,9 +34,8 @@
      itself, add a licensed .woff2 to assets/fonts/ and declare it here with
      @font-face under the family name "Centaur". */
   --font-title: "Centaur", "Centaur MT", "Centaur MT Std", "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  /* Labels on the Executive Board page (committee titles, names, class years):
-     the body sans, so the whole site uses two families. */
-  --font-label: var(--font-body);
+  /* Labels on the Executive Board page (committee titles, names, class years) */
+  --font-label: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --header-h: 88px;
   --max: 1280px;
   --gutter: clamp(20px, 6vw, 80px);
@@ -420,8 +419,8 @@ main { animation: none; }
 .board { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem 5rem; }
 .board-group { border-top: 1px solid var(--hairline-strong); padding-top: 1.4rem; }
 .board-group__title {
-  font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--caption); margin: 0 0 1.5rem;
+  font-family: var(--font-label); font-weight: 500; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--caption); margin: 0 0 1.6rem;
 }
 .board-group__members { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 .member__photo-link { position: relative; display: block; width: 100%; max-width: 240px; overflow: hidden; background: var(--surface); }
